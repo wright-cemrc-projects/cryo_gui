@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -56,7 +57,7 @@ namespace CryoProject
             json.dose_per_image = data.DosePerImage;
             json.amplitude_contrast = data.AmplitudeContrast;
 
-            string dataset = System.IO.Path.Combine(data.ProjectPath, "dataset.json");
+            string dataset = System.IO.Path.Combine(data.LocationProject, "dataset.json");
 
             //open file stream
             using (StreamWriter file = File.CreateText(dataset))
@@ -71,7 +72,32 @@ namespace CryoProject
         {
             Metadata data = (Metadata)DataContext;
 
-            // TODO: write a Text file
+            // Write a human-readable notes
+            string readmePath = System.IO.Path.Combine(data.LocationProject, "README.txt");
+            using (StreamWriter outputFile = new StreamWriter(readmePath))
+            {
+                outputFile.WriteLine("Date = " + data.Date);
+                outputFile.WriteLine("Sample = " + data.SampleDescription);
+                outputFile.WriteLine("Reference = " + data.ReferenceDescription);
+                outputFile.WriteLine("Purpose = " + data.PurposeDescription);
+                outputFile.WriteLine("Imaging mode (TEM, EFTEM) = " + data.ImagingMode);
+                outputFile.WriteLine("Imaging probe = " + data.ImagingProbe);
+                outputFile.WriteLine("Pixel size = " + data.PixelSize);
+                outputFile.WriteLine("Acceleration voltage = " + data.Voltage);
+                outputFile.WriteLine("Total dose per image (e-/A2) = " + data.DosePerImage);
+                outputFile.WriteLine("Exposure time (sec) = " + data.ExposureTimePerImage);
+                outputFile.WriteLine("Spot size = " + data.SpotSize);
+                outputFile.WriteLine("C2 Aperture = " + data.C2Aperture);
+                outputFile.WriteLine("C2 Lens Power = " + data.C2LensPower);
+                outputFile.WriteLine("Illuminated area = " + data.IlluminatedArea);
+                outputFile.WriteLine("Type of grid = " + data.TypeOfGrid);
+                outputFile.WriteLine("Objective aperture = " + data.ObjectiveAperture);
+                outputFile.WriteLine("Type of camera = " + data.TypeOfCamera);
+                outputFile.WriteLine("Location of project = " + data.LocationProject);
+                outputFile.WriteLine("Location of frames = " + data.LocationFrames);
+                outputFile.WriteLine("Location of EPU presets = " + data.LocationEPUPresets);
+                outputFile.WriteLine("Location of EPU preferences = " + data.LocationEPUPreferences);
+            }
         }
 
         private void Done(object sender, RoutedEventArgs e)

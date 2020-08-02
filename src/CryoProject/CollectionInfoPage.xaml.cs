@@ -45,7 +45,7 @@ namespace CryoProject
                 {
                     // string[] files = Directory.GetFiles(fbd.SelectedPath);
                     Metadata data = (Metadata)DataContext;
-                    data.ProjectPath = fbd.SelectedPath;
+                    data.LocationProject = fbd.SelectedPath;
                 }
             }
         }
@@ -54,7 +54,7 @@ namespace CryoProject
         {
             Metadata data = (Metadata)DataContext;
 
-            if (data.ProjectPath == null)
+            if (data.LocationProject == null)
             {
                 System.Windows.Forms.MessageBox.Show("Project path not set", "Error");
             }
