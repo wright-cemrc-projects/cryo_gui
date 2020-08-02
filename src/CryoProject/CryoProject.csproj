@@ -56,11 +56,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="CollectionInfoFinished.xaml">
+    <Page Include="CollectionDonePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CollectionInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CollectionSoftwarePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -72,11 +76,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CollectionInfoFinished.xaml.cs">
-      <DependentUpon>CollectionInfoFinished.xaml</DependentUpon>
+    <Compile Include="CollectionDonePage.xaml.cs">
+      <DependentUpon>CollectionDonePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="CollectionInfoPage.xaml.cs">
       <DependentUpon>CollectionInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionSoftwarePage.xaml.cs">
+      <DependentUpon>CollectionSoftwarePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

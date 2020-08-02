@@ -18,30 +18,20 @@ using System.Windows.Shapes;
 namespace CryoProject
 {
     /// <summary>
-    /// Interaction logic for CollectionInfoPage.xaml
+    /// Interaction logic for CollectionSoftware.xaml
     /// </summary>
-    public partial class CollectionInfoPage : Page
+    public partial class CollectionSoftwarePage : Page
     {
-        // Will be updated and used to save results.
-        public CollectionInfoPage()
+        public CollectionSoftwarePage()
         {
             InitializeComponent();
-            this.DataContext = new Metadata();
         }
-
-        private void SaveProjectJSON()
-        {
-            Metadata data = (Metadata)DataContext;
-            System.Windows.Forms.MessageBox.Show("Notes: " + data.SampleDescription, "Message");
-        }
-
-        private void ChooseProjectDirectory(object sender, RoutedEventArgs e)
+        private void ChooseImageDirectory(object sender, RoutedEventArgs e)
         {
             // Open a file dialog
-            // If valid directory:
-            //  - write the project 'dataset.json'
-            //  - write a README.txt
-            //  exit program
+            // If valid directory: update the image directory location.
+            // We will need a relative location of image directory vs. project directory.
+            // If this is EPU, we will need to copy frames to the expected location.
 
             using (var fbd = new FolderBrowserDialog())
             {
@@ -49,18 +39,18 @@ namespace CryoProject
 
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
-                    // string[] files = Directory.GetFiles(fbd.SelectedPath);
-                    Metadata data = (Metadata)DataContext;
-                    data.ProjectPath = fbd.SelectedPath;
+                    string[] files = Directory.GetFiles(fbd.SelectedPath);
+                    System.Windows.Forms.MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
+
                 }
             }
         }
 
         private void Next(object sender, RoutedEventArgs e)
         {
-            CollectionSoftwarePage p = new CollectionSoftwarePage();
+            CollectionDonePage p = new CollectionDonePage();
             this.NavigationService.Navigate(p);
         }
 
-     }
+    }
 }

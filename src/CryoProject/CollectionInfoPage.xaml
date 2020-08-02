@@ -43,57 +43,46 @@
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition  />
+                <RowDefinition Height="100" />
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0">Date</Label>
-            <TextBox Grid.Column="1" Grid.Row="0">... notes ...</TextBox>
+            <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Path=Date, StringFormat='yyyy-MM-dd HH:mm:ss '}"/>
 
             <Label Grid.Column="0" Grid.Row="1">User</Label>
-            <TextBox Grid.Column="1" Grid.Row="1">... notes ...</TextBox>
+            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=User, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="0" Grid.Row="2">Sample Description</Label>
-            <TextBox Grid.Column="1" Grid.Row="2">... notes ...</TextBox>
+            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="0" Grid.Row="3">Detector type</Label>
             <ComboBox Margin="0" Grid.Column="1" Grid.Row="3">
                 <ComboBoxItem IsSelected="True">Falcon 3EC</ComboBoxItem>
                 <ComboBoxItem>Gatan K3</ComboBoxItem>
             </ComboBox>
-            
+
             <Label Grid.Column="0" Grid.Row="4">Pixel Size (Å)</Label>
-            <TextBox Grid.Column="1" Grid.Row="4">1.0</TextBox>
-
+            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=PixelSize, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/> 
+            
             <Label Grid.Column="0" Grid.Row="5">Acceleration Voltage (kV)</Label>
-            <TextBox Grid.Column="1" Grid.Row="5">300</TextBox>
+            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=Voltage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="6">Total dose per image (e-/A2) </Label>
-            <TextBox Grid.Column="1" Grid.Row="6">1 </TextBox>
+            <Label Grid.Column="0" Grid.Row="6">Total dose per image (e-/A2)</Label>
+            <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=DosePerImage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
             <Label Grid.Column="0" Grid.Row="7">Spherical Aberration</Label>
-            <TextBox Grid.Column="1" Grid.Row="7">2.7</TextBox>
+            <TextBox Grid.Column="1" Grid.Row="7" Text="{Binding Path=SphericalAberration, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
             <Label Grid.Column="0" Grid.Row="8">Amplitude Contrast</Label>
-            <TextBox Grid.Column="1" Grid.Row="8">0.1</TextBox>
+            <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding Path=AmplitudeContrast, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}" />
 
-            <Label Grid.Column="0" Grid.Row="9">Experiment Notes</Label>
-            <TextBox Grid.Column="1" Grid.Row="9">... notes ...</TextBox>
-
-            <Label Grid.Column="0" Grid.Row="10">Application</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="10">
-                <ComboBoxItem IsSelected="True">SerialEM</ComboBoxItem>
-                <ComboBoxItem>EPU</ComboBoxItem>
-            </ComboBox>
-
-            <Label Grid.Column="0" Grid.Row="11" HorizontalAlignment="Center" VerticalAlignment="Center">Choose the Frames Directory</Label>
-            <Button Click="ChooseImageDirectory" Grid.Column="1" Grid.Row="11" Width="125" Height="25" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">Browse a directory</Button>
+            <!-- View report button -->
+            <Button Click="ChooseProjectDirectory" Grid.Column="1" Grid.Row="10" Margin="0,20,50,0" Width="125" Height="25" HorizontalAlignment="Right">Set Project Directory</Button>
 
         </Grid>
-
-
+        
         <!-- View report button -->
-        <Button Click="ChooseProjectDirectory" Grid.Column="1" Grid.Row="3" Margin="0,20,50,0" Width="125" Height="25" HorizontalAlignment="Right">Setup Project</Button>
+        <Button Click="Next" Grid.Column="1" Grid.Row="3" Margin="0,20,50,0" Width="125" Height="25" HorizontalAlignment="Right">Next Page</Button>
 
         <Grid.Background>
             <ImageBrush ImageSource="beta_galactosidase.png"/>
