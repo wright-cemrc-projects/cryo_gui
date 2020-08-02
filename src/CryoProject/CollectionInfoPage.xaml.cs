@@ -29,12 +29,6 @@ namespace CryoProject
             this.DataContext = new Metadata();
         }
 
-        private void SaveProjectJSON()
-        {
-            Metadata data = (Metadata)DataContext;
-            System.Windows.Forms.MessageBox.Show("Notes: " + data.SampleDescription, "Message");
-        }
-
         private void ChooseProjectDirectory(object sender, RoutedEventArgs e)
         {
             // Open a file dialog
@@ -58,8 +52,16 @@ namespace CryoProject
 
         private void Next(object sender, RoutedEventArgs e)
         {
-            CollectionSoftwarePage p = new CollectionSoftwarePage();
-            this.NavigationService.Navigate(p);
+            Metadata data = (Metadata)DataContext;
+
+            if (data.ProjectPath == null)
+            {
+                System.Windows.Forms.MessageBox.Show("Project path not set", "Error");
+            }
+            else { 
+                CollectionSoftwarePage p = new CollectionSoftwarePage((Metadata)DataContext);
+                this.NavigationService.Navigate(p);
+            }
         }
 
      }

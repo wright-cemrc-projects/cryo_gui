@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CryoProject
 {
-    class Metadata : INotifyPropertyChanged
+    public class Metadata : INotifyPropertyChanged
     {
         private DateTime m_date = DateTime.Now;
         public DateTime Date

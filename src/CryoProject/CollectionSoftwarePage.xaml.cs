@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -22,9 +23,10 @@ namespace CryoProject
     /// </summary>
     public partial class CollectionSoftwarePage : Page
     {
-        public CollectionSoftwarePage()
+        public CollectionSoftwarePage(Metadata data)
         {
             InitializeComponent();
+            DataContext = data;
         }
         private void ChooseImageDirectory(object sender, RoutedEventArgs e)
         {
@@ -48,7 +50,7 @@ namespace CryoProject
 
         private void Next(object sender, RoutedEventArgs e)
         {
-            CollectionDonePage p = new CollectionDonePage();
+            CollectionDonePage p = new CollectionDonePage((Metadata)DataContext);
             this.NavigationService.Navigate(p);
         }
 
