@@ -21,7 +21,7 @@ namespace CryoProject
             }
         }
 
-        private String m_user = "(First, Last Name)";
+        private String m_user = "(NetID)";
         public String User
         {
             get { return m_user; }

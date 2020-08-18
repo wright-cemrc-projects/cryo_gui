@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryoProject"
         mc:Ignorable="d"
+        Icon="icon.png"
         Title="Cryo-EM Research Center" Height="700" Width="800" Source="CollectionInfoPage.xaml">
 
 </NavigationWindow>
