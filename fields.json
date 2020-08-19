@@ -3,51 +3,48 @@
 	{	
 		"title": "Experiment",
 		"fields": [
-			{ "name": "Date", "type": "String" }
-			Date = 2020-08-16
-			User = emontemayor
-			Sample = beta-galactosidase
-			Reference (lab notebook page numbers?) = 2
-			Purpose of experiment = testing k3 couting at smaller pixel size on R1.2/1.3 mesh
-			"Software" : ""
-			Location of saved data = X:\RawData\wright\emontemayor\2020_08_16-2
+			{ "name": "Date", "type": "String", "hint": "" },
+			{ "name": "User", "type": "String", "hint": "NetID" },
+			{ "name": "Sample", "type": "String", "hint": "description"},
+			{ "name": "Reference", "type": "String", "hint":"pages, journal"},
+			{ "name": "Experiment Description", "type":"String", "hint": "(notebook pages)"},
+			{ "name": "Software", "type":"Select", "hint":"select", "options":[{"name": "SerialEM"}, {"name": "EPU"}]},
+			{ "name": "Location of project", "type": "File", "hint": ""}
 		]
 	},
 	{
 		"title": "Optics",
 		"fields": [
-			Imaging mode (TEM, EFTEM) = EFTEM
-			Microprobe or Nanoprobe? = nanoprobe
-			Spot size = 3
-			C2 aperture = 50
-			C2 lens power = ND
-			Illuminated area = 1.5 A
-			Type of grid = QF Au300 R1.2/1.3
-			Objective aperture = 100
-			Type of camera = k3 counting
-			Energy filter slit width (eV) = 20
+			{ "name": "Imaging mode", "type": "Select", "options":[{"name": "TEM"}, {"name": "EFTEM"}]}, 
+			{ "name": "Probe", "type":"Select", "options":[{"name":"Microprobe"}, {"name":"Nanoprobe"}]},
+			{ "name": "Spot size", "type":"Integer", "hint":"3" }, 
+			{ "name": "C2 aperture", "type":"Integer", "hint":"50"}, 
+			{ "name": "C2 lens power", "type":"String", "hint":"ND"},
+			{ "name": "Illuminated area", "type":"Float", "hint":"1.5", "unit":"A"},
+			{ "name": "Type of grid", "type":"String", "hint":"QF Au300 R1.2/1.3"},
+			{ "name": "Objective aperture", "type":"Integer", "hint":"100"},
+			{ "name": "Type of camera", "type":"Select", "options":[{"name":"k3 counting"}]},
+			{ "name": "Energy filter slit width (eV)", "type":"Integer", "hint":"20"}
 		]
 	},
 	{
 		"title": "Frames",
 		"fields": [
-			Pixel size = 0.67
-			Total dose per image (e-/A2) = 40
-			Number of frames = 40
-			Dose per frame (e-/A2) = 1
-			Exposure time (sec) = 0.8
-			Dose rate (e-/pixel/sec) = 24
+			{ "name":"Pixel size", "hint":"0.67"},
+			{ "name":"Total dose per image (e-/A2)", "hint":"40"},
+			{ "name":"Number of frames", "hint":"40"},
+			{ "name":"Dose per frame (e-/A2)", "hint":"1"},
+			{ "name":"Exposure time (sec)", "hint":"0.8"},
+			{ "name":"Dose rate (e-/pixel/sec)", "hint":"24"}
 		]
 	},
 	{
 		"title": "EPU metadata",
-		
+		"fields": [
+			{ "name":"Location of saved frames" },
+			{ "name":"Location and name of EPU presets file" },
+			{ "name":"Location and name of EPU session preferences file" }
+		]
 	}
-			
-
-Location of saved data = X:\RawData\wright\emontemayor\2020_08_16-2
-Location of saved frames = X:\RawData\wright\emontemayor\2020_08_16-2\Frames
-Location and name of EPU presets file = Z:\EPU-presets\SPA-nanoprobe-R1.2-1.3-k3-counted-0.67A.sxml
-Location and name of EPU session preferences file = Z:\EPU-presets\SPA-nanoprobe-R1.2-1.3-k3-counted-0.67A.epuSessionPreferences
 	]
 }
