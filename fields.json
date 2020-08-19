@@ -1,0 +1,53 @@
+{
+	"pages": [
+	{	
+		"title": "Experiment",
+		"fields": [
+			{ "name": "Date", "type": "String" }
+			Date = 2020-08-16
+			User = emontemayor
+			Sample = beta-galactosidase
+			Reference (lab notebook page numbers?) = 2
+			Purpose of experiment = testing k3 couting at smaller pixel size on R1.2/1.3 mesh
+			"Software" : ""
+			Location of saved data = X:\RawData\wright\emontemayor\2020_08_16-2
+		]
+	},
+	{
+		"title": "Optics",
+		"fields": [
+			Imaging mode (TEM, EFTEM) = EFTEM
+			Microprobe or Nanoprobe? = nanoprobe
+			Spot size = 3
+			C2 aperture = 50
+			C2 lens power = ND
+			Illuminated area = 1.5 A
+			Type of grid = QF Au300 R1.2/1.3
+			Objective aperture = 100
+			Type of camera = k3 counting
+			Energy filter slit width (eV) = 20
+		]
+	},
+	{
+		"title": "Frames",
+		"fields": [
+			Pixel size = 0.67
+			Total dose per image (e-/A2) = 40
+			Number of frames = 40
+			Dose per frame (e-/A2) = 1
+			Exposure time (sec) = 0.8
+			Dose rate (e-/pixel/sec) = 24
+		]
+	},
+	{
+		"title": "EPU metadata",
+		
+	}
+			
+
+Location of saved data = X:\RawData\wright\emontemayor\2020_08_16-2
+Location of saved frames = X:\RawData\wright\emontemayor\2020_08_16-2\Frames
+Location and name of EPU presets file = Z:\EPU-presets\SPA-nanoprobe-R1.2-1.3-k3-counted-0.67A.sxml
+Location and name of EPU session preferences file = Z:\EPU-presets\SPA-nanoprobe-R1.2-1.3-k3-counted-0.67A.epuSessionPreferences
+	]
+}

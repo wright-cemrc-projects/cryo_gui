@@ -252,6 +252,17 @@ namespace CryoProject
             }
         }
 
+        private string m_locationDestinationFrames = ".";
+        public string LocationDestinationFrames
+        {
+            get { return m_locationFrames; }
+            set
+            {
+                m_locationDestinationFrames = value;
+                OnPropertyChanged("LocationDestinationFrames");
+            }
+        }
+
         private string m_locationEPUPresets = ".";
         public string LocationEPUPresets
         {

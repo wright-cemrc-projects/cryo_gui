@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -77,6 +77,7 @@ namespace CryoProject
             using (StreamWriter outputFile = new StreamWriter(readmePath))
             {
                 outputFile.WriteLine("Date = " + data.Date);
+                outputFile.WriteLine("User = " + data.User);
                 outputFile.WriteLine("Sample = " + data.SampleDescription);
                 outputFile.WriteLine("Reference = " + data.ReferenceDescription);
                 outputFile.WriteLine("Purpose = " + data.PurposeDescription);
@@ -94,7 +95,8 @@ namespace CryoProject
                 outputFile.WriteLine("Objective aperture = " + data.ObjectiveAperture);
                 outputFile.WriteLine("Type of camera = " + data.TypeOfCamera);
                 outputFile.WriteLine("Location of project = " + data.LocationProject);
-                outputFile.WriteLine("Location of frames = " + data.LocationFrames);
+                outputFile.WriteLine("Location of source frames = " + data.LocationFrames);
+                outputFile.WriteLine("Location of destination frames = " + data.LocationDestinationFrames);
                 outputFile.WriteLine("Location of EPU presets = " + data.LocationEPUPresets);
                 outputFile.WriteLine("Location of EPU preferences = " + data.LocationEPUPreferences);
             }
