@@ -230,6 +230,18 @@ namespace CryoProject
             }
         }
 
+        private string m_typeOfSoftware = "SerialEM";
+        public string TypeOfSoftware
+        {
+            get { return m_typeOfSoftware; }
+            set
+            {
+                m_typeOfCamera = value;
+                OnPropertyChanged("TypeOfSoftware");
+            }
+        }
+
+
         private string m_locationProject = ".";
         public string LocationProject
         {

@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:CryoProject"
+      xmlns:local="clr-namespace:CryoProject" xmlns:sys="clr-namespace:System;assembly=mscorlib"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="800"
       Title="Data Collection">
@@ -58,14 +58,14 @@
             <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="0" Grid.Row="3">Detector type</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="3">
-                <ComboBoxItem IsSelected="True">Falcon 3EC</ComboBoxItem>
-                <ComboBoxItem>Gatan K3</ComboBoxItem>
+            <ComboBox Margin="0,0.4" Grid.Column="1" Grid.Row="3" SelectedItem="{Binding Path=TypeOfCamera, Mode=TwoWay}" HorizontalAlignment="Left" Width="300">
+                <sys:String>Falcon 3EC</sys:String>
+                <sys:String>Gatan K3</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="4">Pixel Size (Å)</Label>
-            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=PixelSize, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/> 
-            
+            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=PixelSize, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+
             <Label Grid.Column="0" Grid.Row="5">Acceleration Voltage (kV)</Label>
             <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=Voltage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
@@ -77,30 +77,30 @@
 
             <Label Grid.Column="0" Grid.Row="8">Amplitude Contrast</Label>
             <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding Path=AmplitudeContrast, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}" />
-            
+
             <Label Grid.Column="0" Grid.Row="9">Imaging Mode</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="9">
-                <ComboBoxItem IsSelected="True">EFTEM</ComboBoxItem>
-                <ComboBoxItem>TEM</ComboBoxItem>
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="9" SelectedItem="{Binding Path=ImagingMode, Mode=TwoWay}">
+                <sys:String>EFTEM</sys:String>
+                <sys:String>TEM</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="10">Probe</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="10">
-                <ComboBoxItem IsSelected="True">MicroProbe</ComboBoxItem>
-                <ComboBoxItem>NanoProbe</ComboBoxItem>
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="10" SelectedItem="{Binding Path=ImagingProbe, Mode=TwoWay}">
+                <sys:String>MicroProbe</sys:String>
+                <sys:String>NanoProbe</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="11">Application</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="11">
-                <ComboBoxItem IsSelected="True">SerialEM</ComboBoxItem>
-                <ComboBoxItem>EPU</ComboBoxItem>
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="11" SelectedItem="{Binding Path=TypeOfSoftware, Mode=TwoWay}">
+                <sys:String>SerialEM</sys:String>
+                <sys:String>EPU</sys:String>
             </ComboBox>
 
             <!-- View report button -->
             <Button Click="ChooseProjectDirectory" Grid.Column="1" Grid.Row="12" Margin="0,20,50,0" Width="125" Height="25" HorizontalAlignment="Right">Set Project Directory</Button>
 
         </Grid>
-        
+
         <!-- View report button -->
         <Button Click="Next" Grid.Column="1" Grid.Row="3" Margin="0,20,50,0" Width="125" Height="25" HorizontalAlignment="Right">Next Page</Button>
 
