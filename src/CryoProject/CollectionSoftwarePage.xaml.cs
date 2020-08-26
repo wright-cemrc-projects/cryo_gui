@@ -43,7 +43,42 @@ namespace CryoProject
                 {
                     string[] files = Directory.GetFiles(fbd.SelectedPath);
                     System.Windows.Forms.MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
+                    Metadata data = (Metadata)DataContext;
+                    data.LocationFrames = fbd.SelectedPath;
+                }
+            }
+        }
 
+        private void ChooseEPUPresets(object sender, RoutedEventArgs e)
+        {
+            // Open a file dialog
+            // Select the presets file
+
+            using (var fbd = new OpenFileDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.FileName))
+                {
+                    Metadata data = (Metadata)DataContext;
+                    data.LocationEPUPresets = fbd.FileName;
+                }
+            }
+        }
+
+        private void ChooseEPUPreferences(object sender, RoutedEventArgs e)
+        {
+            // Open a file dialog
+            // Select the preferences file
+
+            using (var fbd = new OpenFileDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.FileName))
+                {
+                    Metadata data = (Metadata)DataContext;
+                    data.LocationEPUPreferences = fbd.FileName;
                 }
             }
         }

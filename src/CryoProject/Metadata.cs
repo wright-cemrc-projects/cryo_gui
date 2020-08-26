@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CryoProject
 {
+    [Serializable]
     public class Metadata : INotifyPropertyChanged
     {
         private DateTime m_date = DateTime.Now;
@@ -305,6 +306,45 @@ namespace CryoProject
             if (handler != null)
             {
                 handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        public String BuildText()
+        {
+            System.Text.StringBuilder builder = new System.Text.StringBuilder();
+
+            builder.AppendLine("Date = " + Date);
+            builder.AppendLine("User = " + User);
+            builder.AppendLine("Sample = " + SampleDescription);
+            builder.AppendLine("Reference = " + ReferenceDescription);
+            builder.AppendLine("Purpose = " + PurposeDescription);
+            builder.AppendLine("Imaging mode (TEM, EFTEM) = " + ImagingMode);
+            builder.AppendLine("Imaging probe = " + ImagingProbe);
+            builder.AppendLine("Pixel size = " + PixelSize);
+            builder.AppendLine("Acceleration voltage = " + Voltage);
+            builder.AppendLine("Total dose per image (e-/A2) = " + DosePerImage);
+            builder.AppendLine("Exposure time (sec) = " + ExposureTimePerImage);
+            builder.AppendLine("Spot size = " + SpotSize);
+            builder.AppendLine("C2 Aperture = " + C2Aperture);
+            builder.AppendLine("C2 Lens Power = " + C2LensPower);
+            builder.AppendLine("Illuminated area = " + IlluminatedArea);
+            builder.AppendLine("Type of grid = " + TypeOfGrid);
+            builder.AppendLine("Objective aperture = " + ObjectiveAperture);
+            builder.AppendLine("Type of camera = " + TypeOfCamera);
+            builder.AppendLine("Location of project = " + LocationProject);
+            builder.AppendLine("Location of source frames = " + LocationFrames);
+            builder.AppendLine("Location of destination frames = " + LocationDestinationFrames);
+            builder.AppendLine("Location of EPU presets = " + LocationEPUPresets);
+            builder.AppendLine("Location of EPU preferences = " + LocationEPUPreferences);
+
+            return builder.ToString();
+        }
+
+        public void WriteToDisk(string readmePath)
+        {
+            using (StreamWriter outputFile = new StreamWriter(readmePath))
+            {
+                outputFile.Write(BuildText());
             }
         }
     }
