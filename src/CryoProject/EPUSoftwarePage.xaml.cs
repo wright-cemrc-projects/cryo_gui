@@ -42,7 +42,6 @@ namespace CryoProject
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
                     string[] files = Directory.GetFiles(fbd.SelectedPath);
-                    System.Windows.Forms.MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
                     Metadata data = (Metadata)DataContext;
                     data.LocationFrames = fbd.SelectedPath;
                 }

@@ -22,7 +22,7 @@ namespace CryoProject
             }
         }
 
-        private String m_user = "(NetID)";
+        private String m_user = "";
         public String User
         {
             get { return m_user; }
@@ -33,7 +33,7 @@ namespace CryoProject
             }
         }
 
-        private String m_sampleDescription = "(Describe your experiment)";
+        private String m_sampleDescription = "";
         public String SampleDescription
         {
             get { return m_sampleDescription; }
@@ -44,7 +44,7 @@ namespace CryoProject
             }
         }
 
-        private String m_referenceDescription = "(Reference to notes)";
+        private String m_referenceDescription = "";
         public String ReferenceDescription
         {
             get { return m_referenceDescription; }
@@ -55,7 +55,7 @@ namespace CryoProject
             }
         }
 
-        private String m_purposeDescription = "(Short description for purpose)";
+        private String m_purposeDescription = "";
         public String PurposeDescription
         {
             get { return m_purposeDescription; }
@@ -66,7 +66,7 @@ namespace CryoProject
             }
         }
 
-        private String m_imagingMode = "(TEM/EFTEM)";
+        private String m_imagingMode = "TEM";
         public String ImagingMode
         {
             get { return m_imagingMode; }
@@ -77,7 +77,7 @@ namespace CryoProject
             }
         }
 
-        private String m_imagingProbe = "(Microprobe/Nanoprobe)";
+        private String m_imagingProbe = "MicroProbe";
         public String ImagingProbe
         {
             get { return m_imagingProbe; }
@@ -220,7 +220,7 @@ namespace CryoProject
             }
         }
 
-        private string m_typeOfCamera = "CETA";
+        private string m_typeOfCamera = "Ceta";
         public string TypeOfCamera
         {
             get { return m_typeOfCamera; }
@@ -237,7 +237,7 @@ namespace CryoProject
             get { return m_typeOfSoftware; }
             set
             {
-                m_typeOfCamera = value;
+                m_typeOfSoftware = value;
                 OnPropertyChanged("TypeOfSoftware");
             }
         }
@@ -268,7 +268,7 @@ namespace CryoProject
         private string m_locationDestinationFrames = ".";
         public string LocationDestinationFrames
         {
-            get { return m_locationFrames; }
+            get { return m_locationDestinationFrames; }
             set
             {
                 m_locationDestinationFrames = value;
@@ -331,6 +331,7 @@ namespace CryoProject
             builder.AppendLine("Type of grid = " + TypeOfGrid);
             builder.AppendLine("Objective aperture = " + ObjectiveAperture);
             builder.AppendLine("Type of camera = " + TypeOfCamera);
+            builder.AppendLine("Type of softare = " + TypeOfSoftware);
             builder.AppendLine("Location of project = " + LocationProject);
             builder.AppendLine("Location of source frames = " + LocationFrames);
             builder.AppendLine("Location of destination frames = " + LocationDestinationFrames);

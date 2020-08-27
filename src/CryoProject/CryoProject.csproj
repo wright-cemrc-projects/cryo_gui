@@ -80,7 +80,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CollectionSoftwarePage.xaml">
+    <Page Include="EPUSoftwarePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,8 +98,8 @@
     <Compile Include="CollectionInfoPage.xaml.cs">
       <DependentUpon>CollectionInfoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CollectionSoftwarePage.xaml.cs">
-      <DependentUpon>CollectionSoftwarePage.xaml</DependentUpon>
+    <Compile Include="EPUSoftwarePage.xaml.cs">
+      <DependentUpon>EPUSoftwarePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

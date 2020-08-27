@@ -23,7 +23,7 @@
 
         <!-- People list -->
         <Border Grid.Column="1" Grid.Row="1" Height="35" Padding="5" Background="#4E87D4">
-            <Label VerticalAlignment="Center" Foreground="White">Metadata</Label>
+            <Label VerticalAlignment="Center" Foreground="White">Summary</Label>
         </Border>
 
         <ScrollViewer VerticalScrollBarVisibility="Auto" Width="600" Height="400" Grid.Column="1" Grid.Row="2" Background="White">

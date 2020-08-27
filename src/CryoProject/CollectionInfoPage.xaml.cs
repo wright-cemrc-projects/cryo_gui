@@ -46,6 +46,9 @@ namespace CryoProject
                     // string[] files = Directory.GetFiles(fbd.SelectedPath);
                     Metadata data = (Metadata)DataContext;
                     data.LocationProject = fbd.SelectedPath;
+
+                    // Set the destination frames location.
+                    data.LocationDestinationFrames = System.IO.Path.Combine(data.LocationProject, "Frames");
                 }
             }
         }
@@ -58,8 +61,15 @@ namespace CryoProject
             {
                 System.Windows.Forms.MessageBox.Show("Project path not set", "Error");
             }
-            else { 
-                CollectionSoftwarePage p = new CollectionSoftwarePage((Metadata)DataContext);
+            else {
+                Page p;
+                if (data.TypeOfSoftware == "EPU")
+                {
+                    p = new CollectionSoftwarePage((Metadata)DataContext);
+                } else
+                {
+                    p = new CollectionDonePage((Metadata)DataContext);
+                }
                 this.NavigationService.Navigate(p);
             }
         }
