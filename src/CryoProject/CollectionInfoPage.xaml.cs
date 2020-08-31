@@ -26,7 +26,12 @@ namespace CryoProject
         public CollectionInfoPage()
         {
             InitializeComponent();
-            this.DataContext = new Metadata();
+        }
+
+        public CollectionInfoPage(Metadata data)
+        {
+            InitializeComponent();
+            DataContext = data;
         }
 
         private void ChooseProjectDirectory(object sender, RoutedEventArgs e)
@@ -57,9 +62,9 @@ namespace CryoProject
         {
             Metadata data = (Metadata)DataContext;
 
-            if (data.LocationProject == null)
+            if (! data.ProjectSet )
             {
-                System.Windows.Forms.MessageBox.Show("Project path not set", "Error");
+                System.Windows.Forms.MessageBox.Show("Please set the project path.", "Page incomplete.");
             }
             else {
                 Page p;

@@ -23,6 +23,10 @@ namespace CryoProject
         public MainWindow()
         {
             InitializeComponent();
+
+            // Create the application state and set for the first time.
+            Metadata state = new Metadata();
+            Content = new CollectionInfoPage(state);
         }
     }
 }

@@ -11,6 +11,18 @@ namespace CryoProject
     [Serializable]
     public class Metadata : INotifyPropertyChanged
     {
+        private String m_version = "1.0";
+        public String Version
+        {
+            get { return m_version; }
+            set
+            {
+                m_version = value;
+                OnPropertyChanged("Version");
+            }
+
+        }
+
         private DateTime m_date = DateTime.Now;
         public DateTime Date
         {
@@ -66,7 +78,7 @@ namespace CryoProject
             }
         }
 
-        private String m_imagingMode = "TEM";
+        private String m_imagingMode = "EFTEM";
         public String ImagingMode
         {
             get { return m_imagingMode; }
@@ -77,7 +89,7 @@ namespace CryoProject
             }
         }
 
-        private String m_imagingProbe = "MicroProbe";
+        private String m_imagingProbe = "NanoProbe";
         public String ImagingProbe
         {
             get { return m_imagingProbe; }
@@ -220,7 +232,7 @@ namespace CryoProject
             }
         }
 
-        private string m_typeOfCamera = "Ceta";
+        private string m_typeOfCamera = "Gatan K3";
         public string TypeOfCamera
         {
             get { return m_typeOfCamera; }
@@ -231,7 +243,7 @@ namespace CryoProject
             }
         }
 
-        private string m_typeOfSoftware = "SerialEM";
+        private string m_typeOfSoftware = "EPU";
         public string TypeOfSoftware
         {
             get { return m_typeOfSoftware; }
@@ -242,6 +254,11 @@ namespace CryoProject
             }
         }
 
+        private bool m_projectSet = false;
+        public bool ProjectSet
+        {
+            get { return m_projectSet; }
+        }
 
         private string m_locationProject = ".";
         public string LocationProject
@@ -249,8 +266,12 @@ namespace CryoProject
             get { return m_locationProject; }
             set
             {
-                m_locationProject = value;
-                OnPropertyChanged("LocationProject");
+                if (Directory.Exists(value))
+                {
+                    m_projectSet = true;
+                    m_locationProject = value;
+                    OnPropertyChanged("LocationProject");
+                }
             }
         }
 

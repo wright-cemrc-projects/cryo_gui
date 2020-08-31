@@ -41,11 +41,11 @@ namespace CryoProject
             string dataset = System.IO.Path.Combine(data.LocationProject, "dataset.json");
 
             //open file stream
-            using (StreamWriter file = File.CreateText(dataset))
+            using (StreamWriter outputFile = new StreamWriter(dataset))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 //serialize object directly into file stream
-                serializer.Serialize(file, data);
+                serializer.Serialize(outputFile, data);
             }
         }
 
@@ -55,13 +55,15 @@ namespace CryoProject
 
             // Write a human-readable notes
             string readmePath = System.IO.Path.Combine(data.LocationProject, "README.txt");
+            System.Windows.Forms.MessageBox.Show(readmePath, "Notes saved at:");
+
             data.WriteToDisk(readmePath);
         }
 
         private void Done(object sender, RoutedEventArgs e)
         {
-            SaveProjectJSON();
             SaveProjectTextfile();
+            SaveProjectJSON();
             System.Windows.Application.Current.Shutdown();
         }
     }
