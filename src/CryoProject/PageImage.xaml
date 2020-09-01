@@ -58,7 +58,7 @@
             <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
             <Label Grid.Column="0" Grid.Row="4">Dose rate (e-/pixel/sec) </Label>
-            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=DoseRate, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
             <Label Grid.Column="0" Grid.Row="5">Number of fractions</Label>
             <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=NumberOfFrames, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
