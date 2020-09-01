@@ -23,9 +23,9 @@ namespace CryoProject
     /// <summary>
     /// Interaction logic for CollectionDonePage.xaml
     /// </summary>
-    public partial class CollectionDonePage : Page { 
+    public partial class PageDone : Page { 
         
-        public CollectionDonePage(Metadata data)
+        public PageDone(Metadata data)
         {
             InitializeComponent();
             DataContext = data;

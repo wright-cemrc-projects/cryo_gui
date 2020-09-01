@@ -21,9 +21,9 @@ namespace CryoProject
     /// <summary>
     /// Interaction logic for CollectionSoftware.xaml
     /// </summary>
-    public partial class CollectionSoftwarePage : Page
+    public partial class PageEPU : Page
     {
-        public CollectionSoftwarePage(Metadata data)
+        public PageEPU(Metadata data)
         {
             InitializeComponent();
             DataContext = data;
@@ -84,7 +84,7 @@ namespace CryoProject
 
         private void Next(object sender, RoutedEventArgs e)
         {
-            CollectionDonePage p = new CollectionDonePage((Metadata)DataContext);
+            PageDone p = new PageDone((Metadata)DataContext);
             this.NavigationService.Navigate(p);
         }
 

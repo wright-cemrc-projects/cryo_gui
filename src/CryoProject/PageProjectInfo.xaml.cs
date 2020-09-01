@@ -20,15 +20,15 @@ namespace CryoProject
     /// <summary>
     /// Interaction logic for CollectionInfoPage.xaml
     /// </summary>
-    public partial class CollectionInfoPage : Page
+    public partial class PageProjectInfo : Page
     {
         // Will be updated and used to save results.
-        public CollectionInfoPage()
+        public PageProjectInfo()
         {
             InitializeComponent();
         }
 
-        public CollectionInfoPage(Metadata data)
+        public PageProjectInfo(Metadata data)
         {
             InitializeComponent();
             DataContext = data;
@@ -61,20 +61,12 @@ namespace CryoProject
         private void Next(object sender, RoutedEventArgs e)
         {
             Metadata data = (Metadata)DataContext;
-
             if (! data.ProjectSet )
             {
                 System.Windows.Forms.MessageBox.Show("Please set the project path.", "Page incomplete.");
             }
             else {
-                Page p;
-                if (data.TypeOfSoftware == "EPU")
-                {
-                    p = new CollectionSoftwarePage((Metadata)DataContext);
-                } else
-                {
-                    p = new CollectionDonePage((Metadata)DataContext);
-                }
+                Page p = new PageOptics((Metadata)DataContext);
                 this.NavigationService.Navigate(p);
             }
         }

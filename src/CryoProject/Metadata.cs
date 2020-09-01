@@ -133,6 +133,28 @@ namespace CryoProject
             }
         }
 
+        private float m_dosePerFrame = 1.0f;
+        public float DosePerFrame
+        {
+            get { return m_dosePerFrame; }
+            set
+            {
+                m_dosePerFrame = value;
+                OnPropertyChanged("DosePerFrame");
+            }
+        }
+
+        private float m_doseRate = 1.0f;
+        public float DoseRate
+        {
+            get { return m_doseRate; }
+            set
+            {
+                m_doseRate = value;
+                OnPropertyChanged("DoseRate");
+            }
+        }
+
         private float m_exposureTimePerImage = 1.0f;
         public float ExposureTimePerImage
         {
@@ -243,6 +265,17 @@ namespace CryoProject
             }
         }
 
+        private int m_numberOfFrames = 40;
+        public int NumberOfFrames
+        {
+            get { return m_numberOfFrames; }
+            set
+            {
+                m_numberOfFrames = value;
+                OnPropertyChanged("NumberOfFrames");
+            }
+        }
+
         private string m_typeOfSoftware = "EPU";
         public string TypeOfSoftware
         {
@@ -319,6 +352,17 @@ namespace CryoProject
             }
         }
 
+        private float m_energyFilterSlitWidth = 1f;
+        public float EnergyFilterSlitWidth
+        {
+            get { return m_energyFilterSlitWidth; }
+            set
+            {
+                m_energyFilterSlitWidth = value;
+                OnPropertyChanged("EnergyFilterSlitWidth");
+            }
+        }
+
         // Data model changed events.
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
@@ -334,30 +378,45 @@ namespace CryoProject
         {
             System.Text.StringBuilder builder = new System.Text.StringBuilder();
 
+            // Page 1 : Project Info
             builder.AppendLine("Date = " + Date);
             builder.AppendLine("User = " + User);
             builder.AppendLine("Sample = " + SampleDescription);
+            builder.AppendLine("Type of grid = " + TypeOfGrid);
             builder.AppendLine("Reference = " + ReferenceDescription);
             builder.AppendLine("Purpose = " + PurposeDescription);
+            builder.AppendLine("Software = " + TypeOfSoftware);
+            builder.AppendLine("Location of project = " + LocationProject);
+            builder.AppendLine();
+
+            // Page 2 : Optics
             builder.AppendLine("Imaging mode (TEM, EFTEM) = " + ImagingMode);
             builder.AppendLine("Imaging probe = " + ImagingProbe);
-            builder.AppendLine("Pixel size = " + PixelSize);
-            builder.AppendLine("Acceleration voltage = " + Voltage);
-            builder.AppendLine("Total dose per image (e-/A2) = " + DosePerImage);
-            builder.AppendLine("Exposure time (sec) = " + ExposureTimePerImage);
             builder.AppendLine("Spot size = " + SpotSize);
             builder.AppendLine("C2 Aperture = " + C2Aperture);
             builder.AppendLine("C2 Lens Power = " + C2LensPower);
             builder.AppendLine("Illuminated area = " + IlluminatedArea);
-            builder.AppendLine("Type of grid = " + TypeOfGrid);
             builder.AppendLine("Objective aperture = " + ObjectiveAperture);
+            builder.AppendLine("Energy filter slit width (eV) = " + EnergyFilterSlitWidth);
+            builder.AppendLine("Acceleration voltage = " + Voltage);
+            builder.AppendLine();
+
+            // Page 3 : Image
             builder.AppendLine("Type of camera = " + TypeOfCamera);
-            builder.AppendLine("Type of softare = " + TypeOfSoftware);
-            builder.AppendLine("Location of project = " + LocationProject);
+            builder.AppendLine("Pixel size (A) = " + PixelSize);
+            builder.AppendLine("Total dose per image (e-/A2) = " + DosePerImage);
+            builder.AppendLine("Number of frames = " + NumberOfFrames);
+            builder.AppendLine("Dose per frame (e-/A2) = " + DosePerFrame);
+            builder.AppendLine("Exposure time (sec) = " + ExposureTimePerImage);
+            builder.AppendLine("Dose rate (e-/pixel/sec) = " + DoseRate);
+            builder.AppendLine();
+
+            // Page 4 : EPU specific
             builder.AppendLine("Location of source frames = " + LocationFrames);
             builder.AppendLine("Location of destination frames = " + LocationDestinationFrames);
             builder.AppendLine("Location of EPU presets = " + LocationEPUPresets);
             builder.AppendLine("Location of EPU preferences = " + LocationEPUPreferences);
+            builder.AppendLine();
 
             return builder.ToString();
         }

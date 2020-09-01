@@ -6,6 +6,6 @@
         xmlns:local="clr-namespace:CryoProject"
         mc:Ignorable="d"
         Icon="icon.png"
-        Title="Cryo-EM Research Center" Height="700" Width="800" Source="CollectionInfoPage.xaml">
+        Title="Cryo-EM Research Center" Height="700" Width="800" Source="PageProjectInfo.xaml">
 
 </NavigationWindow>

@@ -74,16 +74,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PageImage.xaml.cs">
+      <DependentUpon>PageImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageOptics.xaml.cs">
+      <DependentUpon>PageOptics.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Records.cs" />
-    <Page Include="CollectionDonePage.xaml">
+    <Page Include="PageDone.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CollectionInfoPage.xaml">
+    <Page Include="PageImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageOptics.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageProjectInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EPUSoftwarePage.xaml">
+    <Page Include="PageEPU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,14 +109,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CollectionDonePage.xaml.cs">
-      <DependentUpon>CollectionDonePage.xaml</DependentUpon>
+    <Compile Include="PageDone.xaml.cs">
+      <DependentUpon>PageDone.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CollectionInfoPage.xaml.cs">
-      <DependentUpon>CollectionInfoPage.xaml</DependentUpon>
+    <Compile Include="PageProjectInfo.xaml.cs">
+      <DependentUpon>PageProjectInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EPUSoftwarePage.xaml.cs">
-      <DependentUpon>EPUSoftwarePage.xaml</DependentUpon>
+    <Compile Include="PageEPU.xaml.cs">
+      <DependentUpon>PageEPU.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
