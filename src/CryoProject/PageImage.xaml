@@ -23,7 +23,7 @@
 
         <!-- People list -->
         <Border Grid.Column="1" Grid.Row="1" Height="35" Padding="5" Background="#4E87D4">
-            <Label VerticalAlignment="Center" Foreground="White">Optics</Label>
+            <Label VerticalAlignment="Center" Foreground="White">Imaging</Label>
         </Border>
 
         <Grid Grid.Column="1" Grid.Row="2" Background="White">
@@ -51,21 +51,22 @@
             <Label Grid.Column="0" Grid.Row="1">Pixel Size (Å)</Label>
             <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=PixelSize, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="2">Total dose per image (e-/A2)</Label>
+            <Label Grid.Column="0" Grid.Row="2">Total dose per image (e-/Å2)</Label>
             <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=DosePerImage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="3">Number of Frames</Label>
-            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=NumberOfFrames, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="3">Exposure time per image (sec)</Label>
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="4">Dose per frame (e-/A2)</Label>
-            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=DosePerFrame, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="4">Dose rate (e-/pixel/sec) </Label>
+            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="5">Exposure time per image (sec)</Label>
-            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="5">Number of fractions</Label>
+            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=NumberOfFrames, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="6">Dose rate (e-/pixel/sec) </Label>
-            <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
-            
+            <Label Grid.Column="0" Grid.Row="6">Dose per fraction (e-/Å2)</Label>
+            <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=DosePerFrame, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+
+
         </Grid>
 
         <!-- View report button -->

@@ -40,15 +40,15 @@
 
             <Label Grid.Column="1" Grid.Row="0" Content="{Binding Path=LocationFrames}"></Label>
             <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" >Choose the Frames Directory</Label>
-            <Button Click="ChooseImageDirectory" Grid.Column="1" Grid.Row="0" Margin="0,20,0,0" Width="125" Height="25" HorizontalAlignment="Right">Browse a directory</Button>
+            <Button Click="ChooseImageDirectory" Grid.Column="1" Grid.Row="0" Margin="0,20,20,0" Width="125" Height="25" HorizontalAlignment="Right">Browse a directory</Button>
 
             <Label Grid.Column="1" Grid.Row="1" Content="{Binding Path=LocationEPUPresets}"></Label>
             <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" >Choose EPU Presets File Location</Label>
-            <Button Click="ChooseEPUPresets" Grid.Column="1" Grid.Row="1" Margin="0,20,0,0" Width="125" Height="25" HorizontalAlignment="Right">Browse to file</Button>
+            <Button Click="ChooseEPUPresets" Grid.Column="1" Grid.Row="1" Margin="0,20,20,0" Width="125" Height="25" HorizontalAlignment="Right">Browse to file</Button>
 
             <Label Grid.Column="1" Grid.Row="2" Content="{Binding Path=LocationEPUPreferences}"></Label>
             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" >Choose EPU Preferences File Location</Label>
-            <Button Click="ChooseEPUPreferences" Grid.Column="1" Grid.Row="2" Margin="0,20,0,0" Width="125" Height="25" HorizontalAlignment="Right">Browse to file</Button>
+            <Button Click="ChooseEPUPreferences" Grid.Column="1" Grid.Row="2" Margin="0,20,20,0" Width="125" Height="25" HorizontalAlignment="Right">Browse to file</Button>
 
 
         </Grid>

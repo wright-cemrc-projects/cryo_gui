@@ -243,7 +243,7 @@ namespace CryoProject
             }
         }
 
-        private float m_objectiveAperture = 10000;
+        private float m_objectiveAperture = 100;
         public float ObjectiveAperture
         {
             get { return m_objectiveAperture; }
