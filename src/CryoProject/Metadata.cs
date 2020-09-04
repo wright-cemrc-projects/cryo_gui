@@ -287,6 +287,75 @@ namespace CryoProject
             }
         }
 
+        private float m_energyFilterSlitWidth = 1f;
+        public float EnergyFilterSlitWidth
+        {
+            get { return m_energyFilterSlitWidth; }
+            set
+            {
+                m_energyFilterSlitWidth = value;
+                OnPropertyChanged("EnergyFilterSlitWidth");
+            }
+        }
+
+        private bool m_usingPhasePlate = false;
+        public bool UsingPhasePlate
+        {
+            get { return m_usingPhasePlate; }
+            set
+            {
+                m_usingPhasePlate = value;
+                OnPropertyChanged("UsingPhasePlate");
+            }
+        }
+
+        private bool m_tiltSeries = false;
+        public bool TiltSeries
+        {
+            get { return m_tiltSeries; }
+            set
+            {
+                m_tiltSeries = value;
+                OnPropertyChanged("TiltSeries");
+            }
+        }
+
+        // Tilt-scheme (NA, uni-directional, bidirectional)
+        private string m_tiltScheme = "NA";
+        private string TiltScheme
+        {
+            get { return m_tiltScheme; }
+            set
+            {
+                m_tiltScheme = value;
+                OnPropertyChanged("TiltScheme");
+            }
+        }
+
+        // Tilt-angle (2 or 3 degrees)
+        private float m_tiltAngle = 2;
+        public float TiltAngle
+        {
+            get { return m_tiltAngle; }
+            set
+            {
+                m_tiltAngle = value;
+                OnPropertyChanged("TiltAngle");
+            }
+        }
+
+        // Tilt-range (60 degrees typical)
+        private float m_tiltRange = 60;
+        public float TiltRange
+        {
+            get { return m_tiltRange; }
+            set
+            {
+                m_tiltRange = value;
+                OnPropertyChanged("TiltRange");
+            }
+        }
+
         private bool m_projectSet = false;
         public bool ProjectSet
         {
@@ -352,17 +421,6 @@ namespace CryoProject
             }
         }
 
-        private float m_energyFilterSlitWidth = 1f;
-        public float EnergyFilterSlitWidth
-        {
-            get { return m_energyFilterSlitWidth; }
-            set
-            {
-                m_energyFilterSlitWidth = value;
-                OnPropertyChanged("EnergyFilterSlitWidth");
-            }
-        }
-
         // Data model changed events.
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
@@ -399,6 +457,8 @@ namespace CryoProject
             builder.AppendLine("Objective aperture = " + ObjectiveAperture);
             builder.AppendLine("Energy filter slit width (eV) = " + EnergyFilterSlitWidth);
             builder.AppendLine("Acceleration voltage = " + Voltage);
+            string answer = UsingPhasePlate ? "Yes" : "No";
+            builder.AppendLine("Using Phase Plate? = " + answer);
             builder.AppendLine();
 
             // Page 3 : Image
@@ -417,6 +477,14 @@ namespace CryoProject
             builder.AppendLine("Location of EPU presets = " + LocationEPUPresets);
             builder.AppendLine("Location of EPU preferences = " + LocationEPUPreferences);
             builder.AppendLine();
+
+            // Page 5 : Processing specific information
+            if (TiltSeries)
+            {
+                builder.AppendLine("Tilt Scheme: " + TiltScheme);
+                builder.AppendLine("Tilt Angle (degrees): " + TiltAngle);
+                builder.AppendLine("Tilt Range (degrees): " + TiltRange);
+            }
 
             return builder.ToString();
         }

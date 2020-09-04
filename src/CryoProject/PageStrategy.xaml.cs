@@ -20,10 +20,11 @@ namespace CryoProject
     /// <summary>
     /// Interaction logic for CollectionInfoPage.xaml
     /// </summary>
-    public partial class PageImage : Page
+    public partial class PageStrategy : Page
     {
         // Will be updated and used to save results.
-        public PageImage(Metadata data)
+
+        public PageStrategy(Metadata data)
         {
             InitializeComponent();
             DataContext = data;
@@ -32,15 +33,7 @@ namespace CryoProject
         private void Next(object sender, RoutedEventArgs e)
         {
             Metadata data = (Metadata)DataContext;
-            Page p;
-            if (data.TypeOfSoftware == "EPU")
-            {
-                p = new PageEPU((Metadata)DataContext);
-            }
-            else
-            {
-                p = new PageStrategy((Metadata)DataContext);
-            }
+            Page p = new PageDone(data);
             this.NavigationService.Navigate(p);
         }
 

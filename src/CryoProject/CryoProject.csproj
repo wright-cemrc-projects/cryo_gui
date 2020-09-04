@@ -74,8 +74,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BoolToIndexConverter.cs" />
     <Compile Include="PageImage.xaml.cs">
       <DependentUpon>PageImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageStrategy.xaml.cs">
+      <DependentUpon>PageStrategy.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageOptics.xaml.cs">
       <DependentUpon>PageOptics.xaml</DependentUpon>
@@ -86,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageStrategy.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

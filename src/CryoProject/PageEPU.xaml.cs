@@ -84,7 +84,7 @@ namespace CryoProject
 
         private void Next(object sender, RoutedEventArgs e)
         {
-            PageDone p = new PageDone((Metadata)DataContext);
+            PageStrategy p = new PageStrategy((Metadata)DataContext);
             this.NavigationService.Navigate(p);
         }
 
