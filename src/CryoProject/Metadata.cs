@@ -11,7 +11,7 @@ namespace CryoProject
     [Serializable]
     public class Metadata : INotifyPropertyChanged
     {
-        private String m_version = "1.0";
+        private String m_version = "1.01";
         public String Version
         {
             get { return m_version; }
@@ -42,6 +42,17 @@ namespace CryoProject
             {
                 m_user = value;
                 OnPropertyChanged("User");
+            }
+        }
+
+        private String m_group = "";
+        public String Group
+        {
+            get { return m_group; }
+            set
+            {
+                m_group = value;
+                OnPropertyChanged("Group");
             }
         }
 

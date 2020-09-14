@@ -66,7 +66,7 @@
             <Label Grid.Column="0" Grid.Row="4">C2 Lens Power %</Label>
             <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=C2LensPower, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="5">Illuminated Area (µm2)</Label>
+            <Label Grid.Column="0" Grid.Row="5" Content="Illuminated Area (µm)"/>
             <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=IlluminatedArea, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
             <Label Grid.Column="0" Grid.Row="6">Objective Aperture (µm)</Label>

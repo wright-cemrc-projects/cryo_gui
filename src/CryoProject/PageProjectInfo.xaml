@@ -35,6 +35,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
                 <RowDefinition Height="50" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
@@ -49,27 +50,30 @@
             <Label Grid.Column="0" Grid.Row="1">User</Label>
             <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=User, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Label Grid.Column="0" Grid.Row="2">Sample Description</Label>
-            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="2">Group</Label>
+            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=Group, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Label Grid.Column="0" Grid.Row="3">Type of Grid</Label>
-            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=TypeOfGrid, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="3">Sample Description</Label>
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Label Grid.Column="0" Grid.Row="4">Reference Description</Label>
-            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=ReferenceDescription, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="4">Type of Grid</Label>
+            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=TypeOfGrid, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Label Grid.Column="0" Grid.Row="5">Experiment Purpose</Label>
-            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=PurposeDescription, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="5">Reference Description</Label>
+            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=ReferenceDescription, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Label Grid.Column="0" Grid.Row="6">Data Collection Software</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="6" SelectedItem="{Binding Path=TypeOfSoftware, Mode=TwoWay}">
+            <Label Grid.Column="0" Grid.Row="6">Experiment Purpose</Label>
+            <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=PurposeDescription, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Grid.Column="0" Grid.Row="7">Data Collection Software</Label>
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="7" SelectedItem="{Binding Path=TypeOfSoftware, Mode=TwoWay}">
                 <sys:String>SerialEM</sys:String>
                 <sys:String>EPU</sys:String>
             </ComboBox>
 
             <!-- View report button -->
-            <Label Grid.Column="1" Grid.Row="7" Content="{Binding Path=LocationProject}"></Label>
-            <Button Click="ChooseProjectDirectory" Grid.Column="1" Grid.Row="7" Margin="0,20,20,0" Width="125" Height="25" HorizontalAlignment="Right">Set Project Directory</Button>
+            <Label Grid.Column="1" Grid.Row="8" Content="{Binding Path=LocationProject}"></Label>
+            <Button Click="ChooseProjectDirectory" Grid.Column="1" Grid.Row="8" Margin="0,20,20,20" Width="125" Height="25" HorizontalAlignment="Right">Set Project Directory</Button>
 
         </Grid>
 
