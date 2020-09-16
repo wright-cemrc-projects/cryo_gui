@@ -28,6 +28,8 @@ namespace CryoProject
             InitializeComponent();
             DataContext = data;
         }
+
+        /*
         private void ChooseImageDirectory(object sender, RoutedEventArgs e)
         {
             // Open a file dialog
@@ -47,6 +49,7 @@ namespace CryoProject
                 }
             }
         }
+        */
 
         private void ChooseEPUPresets(object sender, RoutedEventArgs e)
         {

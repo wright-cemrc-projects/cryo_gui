@@ -50,6 +50,7 @@
                 <sys:String>NA</sys:String>
                 <sys:String>Unidirectional</sys:String>
                 <sys:String>Bidirectional</sys:String>
+                <sys:String>Dose-symmetric</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="2">Tilt-range</Label>

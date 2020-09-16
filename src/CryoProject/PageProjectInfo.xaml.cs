@@ -53,7 +53,7 @@ namespace CryoProject
                     data.LocationProject = fbd.SelectedPath;
 
                     // Set the destination frames location.
-                    data.LocationDestinationFrames = System.IO.Path.Combine(data.LocationProject, "Frames");
+                    //data.LocationDestinationFrames = System.IO.Path.Combine(data.LocationProject, "Frames");
                 }
             }
         }

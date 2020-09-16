@@ -11,7 +11,7 @@ namespace CryoProject
     [Serializable]
     public class Metadata : INotifyPropertyChanged
     {
-        private String m_version = "1.01";
+        private String m_version = "1.02";
         public String Version
         {
             get { return m_version; }
@@ -388,6 +388,7 @@ namespace CryoProject
             }
         }
 
+        /*
         private string m_locationFrames = ".";
         public string LocationFrames
         {
@@ -409,6 +410,7 @@ namespace CryoProject
                 OnPropertyChanged("LocationDestinationFrames");
             }
         }
+        */
 
         private string m_locationEPUPresets = ".";
         public string LocationEPUPresets
@@ -483,8 +485,6 @@ namespace CryoProject
             builder.AppendLine();
 
             // Page 4 : EPU specific
-            builder.AppendLine("Location of source frames = " + LocationFrames);
-            builder.AppendLine("Location of destination frames = " + LocationDestinationFrames);
             builder.AppendLine("Location of EPU presets = " + LocationEPUPresets);
             builder.AppendLine("Location of EPU preferences = " + LocationEPUPreferences);
             builder.AppendLine();
