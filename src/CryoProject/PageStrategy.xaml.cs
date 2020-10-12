@@ -37,5 +37,23 @@ namespace CryoProject
             this.NavigationService.Navigate(p);
         }
 
-     }
+        private void ChooseTiltDirectory(object sender, RoutedEventArgs e)
+        {
+            // Open a file dialog
+            // Select the preferences file
+
+
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    // string[] files = Directory.GetFiles(fbd.SelectedPath);
+                    Metadata data = (Metadata)DataContext;
+                    data.TiltDirectory = fbd.SelectedPath;
+                }
+            }
+        }
+    }
 }

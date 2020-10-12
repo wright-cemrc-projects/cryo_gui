@@ -367,6 +367,40 @@ namespace CryoProject
             }
         }
 
+        private string m_tiltDirectory = "";
+        public string TiltDirectory
+        {
+            get { return m_tiltDirectory; }
+            set
+            {
+                // TODO: could compute the relative path here?
+                m_tiltDirectory = value;
+                OnPropertyChanged("TiltDirectory");
+            }
+        }
+
+        private string m_workflow = "On";
+        public string Workflow
+        {
+            get { return m_workflow; }
+            set
+            {
+                m_workflow = value;
+                OnPropertyChanged("Workflow");
+            }
+        }
+
+        private string m_workflowOptions = "MotionCor2";
+        public string WorkflowOptions
+        {
+            get { return m_workflowOptions; }
+            set
+            {
+                m_workflowOptions = value;
+                OnPropertyChanged("WorkflowOptions");
+            }
+        }
+
         private bool m_projectSet = false;
         public bool ProjectSet
         {
