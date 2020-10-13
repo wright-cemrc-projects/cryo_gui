@@ -11,7 +11,7 @@ namespace CryoProject
     [Serializable]
     public class Metadata : INotifyPropertyChanged
     {
-        private String m_version = "1.02";
+        private String m_version = "1.03";
         public String Version
         {
             get { return m_version; }
@@ -309,8 +309,8 @@ namespace CryoProject
             }
         }
 
-        private bool m_usingPhasePlate = false;
-        public bool UsingPhasePlate
+        private string m_usingPhasePlate = "No";
+        public string UsingPhasePlate
         {
             get { return m_usingPhasePlate; }
             set
@@ -390,7 +390,7 @@ namespace CryoProject
             }
         }
 
-        private string m_workflowOptions = "MotionCor2";
+        private string m_workflowOptions = "";
         public string WorkflowOptions
         {
             get { return m_workflowOptions; }
@@ -486,6 +486,7 @@ namespace CryoProject
             // Page 1 : Project Info
             builder.AppendLine("Date = " + Date);
             builder.AppendLine("User = " + User);
+            builder.AppendLine("Group = " + Group);
             builder.AppendLine("Sample = " + SampleDescription);
             builder.AppendLine("Type of grid = " + TypeOfGrid);
             builder.AppendLine("Reference = " + ReferenceDescription);
@@ -504,8 +505,7 @@ namespace CryoProject
             builder.AppendLine("Objective aperture = " + ObjectiveAperture);
             builder.AppendLine("Energy filter slit width (eV) = " + EnergyFilterSlitWidth);
             builder.AppendLine("Acceleration voltage = " + Voltage);
-            string answer = UsingPhasePlate ? "Yes" : "No";
-            builder.AppendLine("Using Phase Plate? = " + answer);
+            builder.AppendLine("Using Phase Plate? = " + UsingPhasePlate);
             builder.AppendLine();
 
             // Page 3 : Image
@@ -524,6 +524,12 @@ namespace CryoProject
             builder.AppendLine();
 
             // Page 5 : Processing specific information
+            builder.AppendLine("Automated processing = " + Workflow);
+            if (Workflow.Equals("On"))
+            {
+                builder.AppendLine("Options = " + WorkflowOptions);
+            }
+
             if (TiltSeries)
             {
                 builder.AppendLine("Tilt Scheme: " + TiltScheme);

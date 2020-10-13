@@ -27,6 +27,11 @@ namespace CryoProject
         {
             InitializeComponent();
             DataContext = data;
+
+            if (data.WorkflowOptions.Equals(""))
+            {
+                data.WorkflowOptions = "Relion";
+            }
         }
 
         /*
@@ -87,7 +92,7 @@ namespace CryoProject
 
         private void Next(object sender, RoutedEventArgs e)
         {
-            PageStrategy p = new PageStrategy((Metadata)DataContext);
+            PageDone p = new PageDone((Metadata)DataContext);
             this.NavigationService.Navigate(p);
         }
 

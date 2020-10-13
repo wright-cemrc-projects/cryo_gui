@@ -28,6 +28,11 @@ namespace CryoProject
         {
             InitializeComponent();
             DataContext = data;
+
+            if (data.WorkflowOptions.Equals(""))
+            {
+                data.WorkflowOptions = "MotionCor2";
+            }
         }
 
         private void Next(object sender, RoutedEventArgs e)

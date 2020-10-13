@@ -79,9 +79,9 @@
             <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding Path=Voltage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
             <Label Grid.Column="0" Grid.Row="9">Using phase plate?</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="9">
-                <ComboBoxItem Content="No" />
-                <ComboBoxItem Content="Yes" IsSelected="{Binding Path=UsingPhasePlate, Mode=OneWayToSource}" />
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="9" SelectedItem="{Binding Path=UsingPhasePlate, Mode=TwoWay}">
+                <sys:String>No</sys:String>
+                <sys:String>Yes</sys:String>
             </ComboBox>
 
         </Grid>
