@@ -58,25 +58,25 @@
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="2">Spot Size</Label>
-            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=SpotSize, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=SpotSize, UpdateSourceTrigger=LostFocus,StringFormat=N0}"/>
 
             <Label Grid.Column="0" Grid.Row="3">C2 Aperture (µm) </Label>
-            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=C2Aperture, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=C2Aperture, UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
             <Label Grid.Column="0" Grid.Row="4">C2 Lens Power %</Label>
-            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=C2LensPower, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=C2LensPower, UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
             <Label Grid.Column="0" Grid.Row="5" Content="Illuminated Area (µm)"/>
-            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=IlluminatedArea, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=IlluminatedArea, UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
             <Label Grid.Column="0" Grid.Row="6">Objective Aperture (µm)</Label>
-            <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=ObjectiveAperture, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=ObjectiveAperture, UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
             <Label Grid.Column="0" Grid.Row="7">Energy filter slit width (eV) </Label>
-            <TextBox Grid.Column="1" Grid.Row="7" Text="{Binding Path=EnergyFilterSlitWidth, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <TextBox Grid.Column="1" Grid.Row="7" Text="{Binding Path=EnergyFilterSlitWidth, UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
             
             <Label Grid.Column="0" Grid.Row="8">Acceleration Voltage (kV)</Label>
-            <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding Path=Voltage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding Path=Voltage, UpdateSourceTrigger=LostFocus,StringFormat=N0}"/>
 
             <Label Grid.Column="0" Grid.Row="9">Using phase plate?</Label>
             <ComboBox Margin="0" Grid.Column="1" Grid.Row="9" SelectedItem="{Binding Path=UsingPhasePlate, Mode=TwoWay}">

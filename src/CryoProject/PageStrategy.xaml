@@ -57,10 +57,10 @@
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="2">Tilt-range</Label>
-            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=TiltRange, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=TiltRange, UpdateSourceTrigger=LostFocus,StringFormat=N1}"/>
 
             <Label Grid.Column="0" Grid.Row="3">Tilt-angle</Label>
-            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=TiltAngle, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=TiltAngle, UpdateSourceTrigger=LostFocus,StringFormat=N1}"/>
 
             <Label Grid.Column="0" Grid.Row="4">Enable automated stack processing?</Label>
             <ComboBox Margin="0" Grid.Column="1" Grid.Row="4" SelectedItem="{Binding Path=Workflow, Mode=TwoWay}">
