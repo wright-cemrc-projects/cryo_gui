@@ -11,7 +11,7 @@ namespace CryoProject
     [Serializable]
     public class Metadata : INotifyPropertyChanged
     {
-        private String m_version = "1.03";
+        private String m_version = "1.04";
         public String Version
         {
             get { return m_version; }
