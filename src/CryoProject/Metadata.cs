@@ -320,6 +320,17 @@ namespace CryoProject
             }
         }
 
+        private string m_usingCDS = "No";
+        public string UsingCDS
+        {
+            get { return m_usingCDS; }
+            set
+            {
+                m_usingCDS = value;
+                OnPropertyChanged("UsingCDS");
+            }
+        }
+
         private bool m_tiltSeries = false;
         public bool TiltSeries
         {
@@ -510,6 +521,7 @@ namespace CryoProject
 
             // Page 3 : Image
             builder.AppendLine("Type of camera = " + TypeOfCamera);
+            builder.AppendLine("Using CDS = " + UsingCDS);
             builder.AppendLine("Pixel size (A) = " + PixelSize);
             builder.AppendLine("Total dose per image (e-/A2) = " + DosePerImage);
             builder.AppendLine("Number of frames = " + NumberOfFrames);
