@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="175"/>
+            <RowDefinition Height="200"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -39,6 +39,7 @@
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0">Detector type</Label>
@@ -48,24 +49,29 @@
                 <sys:String>Ceta</sys:String>
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="1">Pixel Size (Å)</Label>
-            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=PixelSize, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="1">Using CDS?</Label>
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="1" SelectedItem="{Binding Path=UsingCDS, Mode=TwoWay}">
+                <sys:String>No</sys:String>
+                <sys:String>Yes</sys:String>
+            </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="2">Total dose per image (e-/Å2)</Label>
-            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=DosePerImage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="2">Pixel Size (Å)</Label>
+            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=PixelSize,  UpdateSourceTrigger=LostFocus,StringFormat=N3}"/>
 
-            <Label Grid.Column="0" Grid.Row="3">Exposure time per image (sec)</Label>
-            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="3">Total dose per image (e-/Å2)</Label>
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=DosePerImage,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="4">Dose rate (e-/pixel/sec) </Label>
-            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=DoseRate, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="4">Exposure time per image (sec)</Label>
+            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="5">Number of fractions</Label>
-            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=NumberOfFrames, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="5">Dose rate (e-/pixel/sec) </Label>
+            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=DoseRate,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="6">Dose per fraction (e-/Å2)</Label>
-            <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=DosePerFrame, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="6">Number of fractions</Label>
+            <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=NumberOfFrames,  UpdateSourceTrigger=LostFocus,StringFormat=N0}"/>
 
+            <Label Grid.Column="0" Grid.Row="7">Dose per fraction (e-/Å2)</Label>
+            <TextBox Grid.Column="1" Grid.Row="7" Text="{Binding Path=DosePerFrame,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
         </Grid>
 
