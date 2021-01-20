@@ -320,7 +320,7 @@ namespace CryoProject
             }
         }
 
-        private bool m_tiltSeries = false;
+        private bool m_tiltSeries = true;
         public bool TiltSeries
         {
             get { return m_tiltSeries; }
@@ -355,8 +355,8 @@ namespace CryoProject
             }
         }
 
-        // Tilt-range (60 degrees typical)
-        private float m_tiltRange = 60;
+        // Tilt-range (0 degrees, disable checks)
+        private float m_tiltRange = 0;
         public float TiltRange
         {
             get { return m_tiltRange; }
@@ -373,7 +373,6 @@ namespace CryoProject
             get { return m_tiltDirectory; }
             set
             {
-                // TODO: could compute the relative path here?
                 m_tiltDirectory = value;
                 OnPropertyChanged("TiltDirectory");
             }

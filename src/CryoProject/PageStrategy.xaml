@@ -56,9 +56,6 @@
                 <sys:String>Dose-symmetric</sys:String>
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="2">Tilt-range</Label>
-            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=TiltRange, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
-
             <Label Grid.Column="0" Grid.Row="3">Tilt-angle</Label>
             <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=TiltAngle, UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
 
@@ -75,8 +72,8 @@
             </ComboBox>
 
             <Label Grid.Column="1" Grid.Row="6" Content="{Binding Path=TiltDirectory}"></Label>
-            <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left">Set tilt-series location: </Label>
-            <Button Click="ChooseTiltDirectory" Grid.Column="1" Grid.Row="6" Margin="0,20,20,0" Width="125" Height="25" HorizontalAlignment="Right">Browse to file</Button>
+            <Label Grid.Column="0" Grid.Row="6" HorizontalAlignment="Left">Set tilt-series location:</Label>
+            <Button Click="ChooseTiltDirectory" Grid.Column="1" Grid.Row="6" Margin="0,27.4,20,7.6" Width="174" Height="25" HorizontalAlignment="Right">Choose Frames Directory</Button>
 
         </Grid>
 
