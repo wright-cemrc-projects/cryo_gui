@@ -11,7 +11,10 @@ namespace CryoProject
     [Serializable]
     public class Metadata : INotifyPropertyChanged
     {
-        private String m_version = "1.05";
+        // 1.06 adding fields for ModeOfCamera
+        // 1.06 adding fields for OperatorID
+
+        private String m_version = "1.06";
         public String Version
         {
             get { return m_version; }
@@ -31,6 +34,17 @@ namespace CryoProject
             {
                 m_date = value;
                 OnPropertyChanged("Date");
+            }
+        }
+
+        private String m_operator = "";
+        public String Operator
+        {
+            get { return m_operator; }
+            set
+            {
+                m_operator = value;
+                OnPropertyChanged("Operator");
             }
         }
 
@@ -276,6 +290,17 @@ namespace CryoProject
             }
         }
 
+        private string m_modeOfCamera = "Counting";
+        public string ModeOfCamera
+        {
+            get { return m_modeOfCamera; }
+            set
+            {
+                m_modeOfCamera = value;
+                OnPropertyChanged("ModeOfCamera");
+            }
+        }
+
         private int m_numberOfFrames = 40;
         public int NumberOfFrames
         {
@@ -331,8 +356,8 @@ namespace CryoProject
             }
         }
 
-        private bool m_tiltSeries = true;
-        public bool TiltSeries
+        private string m_tiltSeries = "Yes";
+        public string TiltSeries
         {
             get { return m_tiltSeries; }
             set
@@ -344,7 +369,7 @@ namespace CryoProject
 
         // Tilt-scheme (NA, uni-directional, bidirectional)
         private string m_tiltScheme = "NA";
-        private string TiltScheme
+        public string TiltScheme
         {
             get { return m_tiltScheme; }
             set
@@ -495,8 +520,9 @@ namespace CryoProject
 
             // Page 1 : Project Info
             builder.AppendLine("Date = " + Date);
-            builder.AppendLine("User = " + User);
-            builder.AppendLine("Group = " + Group);
+            builder.AppendLine("Operator = " + Operator);
+            builder.AppendLine("Client NetID = " + User);
+            builder.AppendLine("Client Group = " + Group);
             builder.AppendLine("Sample = " + SampleDescription);
             builder.AppendLine("Type of grid = " + TypeOfGrid);
             builder.AppendLine("Reference = " + ReferenceDescription);
@@ -520,6 +546,7 @@ namespace CryoProject
 
             // Page 3 : Image
             builder.AppendLine("Type of camera = " + TypeOfCamera);
+            builder.AppendLine("Camera mode = " + ModeOfCamera);
             builder.AppendLine("Using CDS = " + UsingCDS);
             builder.AppendLine("Pixel size (A) = " + PixelSize);
             builder.AppendLine("Total dose per image (e-/A2) = " + DosePerImage);
@@ -541,7 +568,7 @@ namespace CryoProject
                 builder.AppendLine("Options = " + WorkflowOptions);
             }
 
-            if (TiltSeries)
+            if (TiltSeries.Equals("Yes"))
             {
                 builder.AppendLine("Tilt Scheme: " + TiltScheme);
                 builder.AppendLine("Tilt Angle (degrees): " + TiltAngle);

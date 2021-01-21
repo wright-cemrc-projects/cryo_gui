@@ -33,6 +33,7 @@ namespace CryoProject
             {
                 data.WorkflowOptions = "MotionCor2";
             }
+   
         }
 
         private void Next(object sender, RoutedEventArgs e)

@@ -43,9 +43,9 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0">Collecting tilt-series?</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="0">
-                <ComboBoxItem Content="No" />
-                <ComboBoxItem Content="Yes" IsSelected="{Binding Path=TiltSeries, Mode=OneWayToSource}" />
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=TiltSeries, Mode=TwoWay}">
+                <sys:String>Yes</sys:String>
+                <sys:String>No</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="1">Tilt-scheme</Label>
