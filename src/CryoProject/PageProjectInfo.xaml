@@ -49,28 +49,28 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2">Date</Label>
-            <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=Date, StringFormat='yyyy-MM-dd HH:mm:ss '}" Grid.RowSpan="2"/>
+            <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=Date, StringFormat='yyyy-MM-dd HH:mm:ss '}"/>
 
             <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">Instrument Operator (NetID)</Label>
-            <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding Path=Operator, UpdateSourceTrigger=PropertyChanged}"  Grid.RowSpan="2"/>
+            <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding Path=Operator, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Label Grid.Column="0" Grid.Row="2" Content="Globus User (NetID)" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-            <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=User, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="Globus User (NetID)" Grid.ColumnSpan="2" />
+            <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=User, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Label Grid.Column="0" Grid.Row="3" Content="Group (Last name or Company)" Grid.ColumnSpan="2"  Grid.RowSpan="2"/>
-            <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Path=Group, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="3" Content="Group (Last name or Company)" Grid.ColumnSpan="2" />
+            <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Path=Group, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0.2">Sample Description</Label>
-            <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}"  Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">Sample Description</Label>
+            <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,50.2,0,0" Grid.RowSpan="2">Type of Grid</Label>
-            <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=TypeOfGrid, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">Type of Grid</Label>
+            <TextBox Grid.Column="2" Grid.Row="5" Text="{Binding Path=TypeOfGrid, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Margin="0,0,0,24.6" Grid.RowSpan="2">Reference Description</Label>
-            <TextBox Grid.Column="2" Grid.Row="6" Text="{Binding Path=ReferenceDescription, UpdateSourceTrigger=PropertyChanged}"  Grid.RowSpan="2"/>
+            <TextBox Grid.Column="2" Grid.Row="6" Text="{Binding Path=ReferenceDescription, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0.2,0,24.4" Grid.RowSpan="2">Experiment Purpose</Label>
-            <TextBox Grid.Column="2" Grid.Row="7" Text="{Binding Path=PurposeDescription, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+            <TextBox Grid.Column="2" Grid.Row="7" Text="{Binding Path=PurposeDescription, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Margin="0,0.4">Data Collection Software</Label>
             <ComboBox Margin="0,0.4" Grid.Column="2" Grid.Row="8" SelectedItem="{Binding Path=TypeOfSoftware, Mode=TwoWay}">

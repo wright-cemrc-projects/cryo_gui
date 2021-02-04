@@ -44,21 +44,21 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0">Detector type</Label>
-            <ComboBox Margin="0,0.4" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=TypeOfCamera, Mode=TwoWay}" HorizontalAlignment="Left" Width="300">
+            <ComboBox Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=TypeOfCamera, Mode=TwoWay}" HorizontalAlignment="Left" Width="300">
                 <sys:String>Falcon 3EC</sys:String>
                 <sys:String>Gatan K3</sys:String>
                 <sys:String>Ceta</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="1">Detector mode</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="1" SelectedItem="{Binding Path=ModeOfCamera, Mode=TwoWay}">
+            <ComboBox Grid.Column="1" Grid.Row="1" SelectedItem="{Binding Path=ModeOfCamera, Mode=TwoWay}">
                 <sys:String>Counting</sys:String>
                 <sys:String>Linear</sys:String>
                 <sys:String>Super-resolution</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="2">Using CDS?</Label>
-            <ComboBox Margin="0" Grid.Column="2" Grid.Row="2" SelectedItem="{Binding Path=UsingCDS, Mode=TwoWay}">
+            <ComboBox Grid.Column="2" Grid.Row="2" SelectedItem="{Binding Path=UsingCDS, Mode=TwoWay}">
                 <sys:String>No</sys:String>
                 <sys:String>Yes</sys:String>
             </ComboBox>
