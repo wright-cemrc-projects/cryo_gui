@@ -37,6 +37,18 @@ namespace CryoProject
             }
         }
 
+        private String m_instrument = "";
+        public string Instrument
+        {
+            get { return m_instrument; }
+            set
+            {
+                m_instrument = value;
+                OnPropertyChanged("Insturment");
+            }
+        }
+
+
         private String m_operator = "";
         public String Operator
         {
@@ -78,6 +90,17 @@ namespace CryoProject
             {
                 m_sampleDescription = value;
                 OnPropertyChanged("SampleDescription");
+            }
+        }
+
+        private String m_biosafetyLevel = "";
+        public String BiosafetyLevel
+        {
+            get { return m_biosafetyLevel; }
+            set
+            {
+                m_biosafetyLevel = value;
+                OnPropertyChanged("BiosafetyLevel");
             }
         }
 
@@ -224,7 +247,7 @@ namespace CryoProject
             }
         }
 
-        private float m_c2aperture = 0.1f;
+        private float m_c2aperture = 100.0f;
         public float C2Aperture
         {
             get { return m_c2aperture; }
@@ -520,10 +543,12 @@ namespace CryoProject
 
             // Page 1 : Project Info
             builder.AppendLine("Date = " + Date);
+            builder.AppendLine("Instrument = " + Instrument);
             builder.AppendLine("Operator = " + Operator);
             builder.AppendLine("Client NetID = " + User);
             builder.AppendLine("Client Group = " + Group);
             builder.AppendLine("Sample = " + SampleDescription);
+            builder.AppendLine("Biosafety Level = " + BiosafetyLevel);
             builder.AppendLine("Type of grid = " + TypeOfGrid);
             builder.AppendLine("Reference = " + ReferenceDescription);
             builder.AppendLine("Purpose = " + PurposeDescription);

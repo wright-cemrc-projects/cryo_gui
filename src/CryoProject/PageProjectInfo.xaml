@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="325"/>
+            <RowDefinition Height="375"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition />
@@ -40,7 +40,9 @@
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
                 <RowDefinition Height="50" />
+                <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
@@ -48,39 +50,55 @@
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2">Date</Label>
-            <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=Date, StringFormat='yyyy-MM-dd HH:mm:ss '}" Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">Date</Label>
+            <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=Date, StringFormat='yyyy-MM-dd HH:mm:ss '}" />
 
-            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">Instrument Operator (NetID)</Label>
-            <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding Path=Operator, UpdateSourceTrigger=PropertyChanged}"  Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">Instrument</Label>
+            <ComboBox Grid.Column="2" Grid.Row="1" SelectedItem="{Binding Path=Instrument, Mode=TwoWay}">
+                <sys:String>L120C</sys:String>
+                <sys:String>Arctica</sys:String>
+                <sys:String>Krios</sys:String>
+                <sys:String>Aquilos</sys:String>
+            </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="2" Content="Globus User (NetID)" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-            <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=User, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">Instrument Operator (NetID)</Label>
+            <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=Operator, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="3" Content="Group (Last name or Company)" Grid.ColumnSpan="2"  Grid.RowSpan="2"/>
-            <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Path=Group, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">Globus User (NetID)</Label>
+            <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Path=User, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0.2">Sample Description</Label>
-            <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}"  Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">Group (Last name or Company)</Label>
+            <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=Group, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,50.2,0,0" Grid.RowSpan="2">Type of Grid</Label>
-            <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=TypeOfGrid, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">Sample Description</Label>
+            <TextBox Grid.Column="2" Grid.Row="5" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Margin="0,0,0,24.6" Grid.RowSpan="2">Reference Description</Label>
-            <TextBox Grid.Column="2" Grid.Row="6" Text="{Binding Path=ReferenceDescription, UpdateSourceTrigger=PropertyChanged}"  Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">Biosafety Level</Label>
+            <ComboBox Margin="0,0.4" Grid.Column="2" Grid.Row="6" SelectedItem="{Binding Path=BiosafetyLevel, Mode=TwoWay}">
+                <sys:String>1</sys:String>
+                <sys:String>2</sys:String>
+                <sys:String>3</sys:String>
+                <sys:String>4</sys:String>
+            </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0.2,0,24.4" Grid.RowSpan="2">Experiment Purpose</Label>
-            <TextBox Grid.Column="2" Grid.Row="7" Text="{Binding Path=PurposeDescription, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2"/>
+            <Label Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2">Type of Grid</Label>
+            <TextBox Grid.Column="2" Grid.Row="7" Text="{Binding Path=TypeOfGrid, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Margin="0,0.4">Data Collection Software</Label>
-            <ComboBox Margin="0,0.4" Grid.Column="2" Grid.Row="8" SelectedItem="{Binding Path=TypeOfSoftware, Mode=TwoWay}">
+            <Label Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2">[Optional] Reference notebook pages</Label>
+            <TextBox Grid.Column="2" Grid.Row="8" Text="{Binding Path=ReferenceDescription, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Label Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2">[Optional] Experiment Purpose</Label>
+            <TextBox Grid.Column="2" Grid.Row="9" Text="{Binding Path=PurposeDescription, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2">Data Collection Software</Label>
+            <ComboBox Grid.Column="2" Grid.Row="10" SelectedItem="{Binding Path=TypeOfSoftware, Mode=TwoWay}">
                 <sys:String>SerialEM</sys:String>
                 <sys:String>EPU</sys:String>
             </ComboBox>
 
             <!-- View report button -->
-            <Label Grid.Column="2" Grid.Row="8" Content="{Binding Path=LocationProject}" Margin="0,24.4,0,0.4" Grid.RowSpan="2"></Label>
-            <Button Click="ChooseProjectDirectory" Grid.Column="2" Grid.Row="9" Margin="0,37.6,20,37.4" Width="247" Height="25" HorizontalAlignment="Right">Choose Project Directory (YYYY-MM-DD)</Button>
+            <Label Grid.Column="2" Grid.Row="11" Content="{Binding Path=LocationProject}"></Label>
+            <Button Click="ChooseProjectDirectory" Grid.Column="2" Grid.Row="11" Width="247" Height="25" HorizontalAlignment="Right">Choose Project Directory (YYYY-MM-DD)</Button>
 
         </Grid>
 
