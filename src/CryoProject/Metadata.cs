@@ -13,8 +13,9 @@ namespace CryoProject
     {
         // 1.06 adding fields for ModeOfCamera
         // 1.06 adding fields for OperatorID
+        // 1.10 adding separate page for L120C options
 
-        private String m_version = "1.06";
+        private String m_version = "1.10";
         public String Version
         {
             get { return m_version; }
@@ -126,7 +127,7 @@ namespace CryoProject
             }
         }
 
-        private String m_imagingMode = "EFTEM";
+        private String m_imagingMode = "TEM";
         public String ImagingMode
         {
             get { return m_imagingMode; }
@@ -346,7 +347,7 @@ namespace CryoProject
             }
         }
 
-        private float m_energyFilterSlitWidth = 1f;
+        private float m_energyFilterSlitWidth = 0f;
         public float EnergyFilterSlitWidth
         {
             get { return m_energyFilterSlitWidth; }
@@ -365,6 +366,17 @@ namespace CryoProject
             {
                 m_usingPhasePlate = value;
                 OnPropertyChanged("UsingPhasePlate");
+            }
+        }
+
+        private string m_holder = "single-tilt";
+        public string Holder
+        {
+            get { return m_holder; }
+            set
+            {
+                m_holder = value;
+                OnPropertyChanged("Holder");
             }
         }
 

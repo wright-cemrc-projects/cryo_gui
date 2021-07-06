@@ -61,15 +61,22 @@ namespace CryoProject
         private void Next(object sender, RoutedEventArgs e)
         {
             Metadata data = (Metadata)DataContext;
-            if (! data.ProjectSet )
+            if (!data.ProjectSet)
             {
                 System.Windows.Forms.MessageBox.Show("Please set the project path.", "Page incomplete.");
             }
             else {
-                Page p = new PageOptics((Metadata)DataContext);
+                Page p;
+                if (data.Instrument == "L120C")
+                {
+                    p = new PageOpticsL120C((Metadata)DataContext);
+                } else
+                {
+                    p = new PageOptics((Metadata)DataContext);
+                }
                 this.NavigationService.Navigate(p);
             }
         }
 
-     }
+    }
 }

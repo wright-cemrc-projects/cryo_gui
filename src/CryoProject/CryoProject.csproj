@@ -78,6 +78,9 @@
     <Compile Include="PageImage.xaml.cs">
       <DependentUpon>PageImage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageOpticsL120C.xaml.cs">
+      <DependentUpon>PageOpticsL120C.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageStrategy.xaml.cs">
       <DependentUpon>PageStrategy.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageOpticsL120C.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
