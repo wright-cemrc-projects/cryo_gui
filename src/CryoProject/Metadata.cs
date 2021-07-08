@@ -314,7 +314,7 @@ namespace CryoProject
             }
         }
 
-        private string m_modeOfCamera = "Counting";
+        private string m_modeOfCamera = "Not Available";
         public string ModeOfCamera
         {
             get { return m_modeOfCamera; }
@@ -325,7 +325,7 @@ namespace CryoProject
             }
         }
 
-        private int m_numberOfFrames = 40;
+        private int m_numberOfFrames = 1;
         public int NumberOfFrames
         {
             get { return m_numberOfFrames; }
@@ -333,6 +333,17 @@ namespace CryoProject
             {
                 m_numberOfFrames = value;
                 OnPropertyChanged("NumberOfFrames");
+            }
+        }
+
+        private int m_discardFirstFrames = 0;
+        public int DiscardFirstFrames
+        {
+            get { return m_discardFirstFrames; }
+            set
+            {
+                m_discardFirstFrames = value;
+                OnPropertyChanged("DiscardFirstFrames");
             }
         }
 
@@ -426,6 +437,7 @@ namespace CryoProject
             }
         }
 
+        // [Deprecated 1.10]
         // Tilt-range (0 degrees, disable checks)
         private float m_tiltRange = 0;
         public float TiltRange
@@ -449,6 +461,8 @@ namespace CryoProject
             }
         }
 
+        // Whether backend processing is enabled.
+        // [DEPRECATED in 1.11]
         private string m_workflow = "On";
         public string Workflow
         {
@@ -460,7 +474,7 @@ namespace CryoProject
             }
         }
 
-        private string m_workflowOptions = "";
+        private string m_workflowOptions = "Relion";
         public string WorkflowOptions
         {
             get { return m_workflowOptions; }
@@ -492,6 +506,7 @@ namespace CryoProject
             }
         }
 
+        // DEPRECATED
         /*
         private string m_locationFrames = ".";
         public string LocationFrames
@@ -569,28 +584,43 @@ namespace CryoProject
             builder.AppendLine();
 
             // Page 2 : Optics
-            builder.AppendLine("Imaging mode (TEM, EFTEM) = " + ImagingMode);
+            builder.AppendLine("Imaging mode = " + ImagingMode);
             builder.AppendLine("Imaging probe = " + ImagingProbe);
             builder.AppendLine("Spot size = " + SpotSize);
             builder.AppendLine("C2 Aperture = " + C2Aperture);
             builder.AppendLine("C2 Lens Power = " + C2LensPower);
             builder.AppendLine("Illuminated area = " + IlluminatedArea);
             builder.AppendLine("Objective aperture = " + ObjectiveAperture);
-            builder.AppendLine("Energy filter slit width (eV) = " + EnergyFilterSlitWidth);
-            builder.AppendLine("Acceleration voltage = " + Voltage);
-            builder.AppendLine("Using Phase Plate? = " + UsingPhasePlate);
+
+            // Exclude for L120C:
+            if (!Instrument.Equals("L120C"))
+            {
+                builder.AppendLine("Energy filter slit width (eV) = " + EnergyFilterSlitWidth);
+                builder.AppendLine("Acceleration voltage = " + Voltage);
+                builder.AppendLine("Using Phase Plate? = " + UsingPhasePlate);
+            }
             builder.AppendLine();
 
             // Page 3 : Image
             builder.AppendLine("Type of camera = " + TypeOfCamera);
-            builder.AppendLine("Camera mode = " + ModeOfCamera);
-            builder.AppendLine("Using CDS = " + UsingCDS);
+            if (!Instrument.Equals("L120C"))
+            {
+                builder.AppendLine("Camera mode = " + ModeOfCamera);
+                builder.AppendLine("Using CDS = " + UsingCDS);
+            }
             builder.AppendLine("Pixel size (A) = " + PixelSize);
             builder.AppendLine("Total dose per image (e-/A2) = " + DosePerImage);
             builder.AppendLine("Number of frames = " + NumberOfFrames);
             builder.AppendLine("Dose per frame (e-/A2) = " + DosePerFrame);
             builder.AppendLine("Exposure time (sec) = " + ExposureTimePerImage);
-            builder.AppendLine("Dose rate (e-/pixel/sec) = " + DoseRate);
+
+            // Exclude for L120C:
+            if (!Instrument.Equals("L120C"))
+            {
+                builder.AppendLine("Dose rate (e-/pixel/sec) = " + DoseRate);
+                builder.AppendLine("Number of fractions = " + NumberOfFrames);
+            }
+
             builder.AppendLine();
 
             // Page 4 : EPU specific

@@ -75,6 +75,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BoolToIndexConverter.cs" />
+    <Compile Include="PageImageL120C.xaml.cs">
+      <DependentUpon>PageImageL120C.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageImage.xaml.cs">
       <DependentUpon>PageImage.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
     <Page Include="PageDone.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageImageL120C.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="PageImage.xaml">
       <Generator>MSBuild:Compile</Generator>

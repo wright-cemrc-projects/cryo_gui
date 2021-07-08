@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="200"/>
+            <RowDefinition Height="250"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -41,13 +41,15 @@
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0">Detector type</Label>
             <ComboBox Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=TypeOfCamera, Mode=TwoWay}" HorizontalAlignment="Left" Width="300">
                 <sys:String>Falcon 3EC</sys:String>
                 <sys:String>Gatan K3</sys:String>
-                <sys:String>Ceta</sys:String>
+                <sys:String>Ceta-M</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="1">Detector mode</Label>
@@ -80,6 +82,9 @@
 
             <Label Grid.Column="0" Grid.Row="8">Dose per fraction (e-/Å2)</Label>
             <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding Path=DosePerFrame,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
+
+            <Label Grid.Column="0" Grid.Row="9">Discard first frames? </Label>
+            <TextBox Grid.Column="1" Grid.Row="9" Text="{Binding Path=DiscardFirstFrames,  UpdateSourceTrigger=LostFocus,StringFormat=N0}"/>
 
         </Grid>
 
