@@ -33,7 +33,15 @@ namespace CryoProject
         private void Next(object sender, RoutedEventArgs e)
         {
             Metadata data = (Metadata)DataContext;
-            Page p = new PageImage(data);
+            Page p;
+            if (data.TypeOfSession.Equals("Tomography Session"))
+            {
+                p = new PageImageTomo(data);
+            }
+            else
+            {
+                p = new PageImage(data);
+            }
             this.NavigationService.Navigate(p);
         }
 

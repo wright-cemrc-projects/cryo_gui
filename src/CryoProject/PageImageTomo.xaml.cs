@@ -20,10 +20,10 @@ namespace CryoProject
     /// <summary>
     /// Interaction logic for CollectionInfoPage.xaml
     /// </summary>
-    public partial class PageImage : Page
+    public partial class PageImageTomo : Page
     {
         // Will be updated and used to save results.
-        public PageImage(Metadata data)
+        public PageImageTomo(Metadata data)
         {
             InitializeComponent();
             DataContext = data;

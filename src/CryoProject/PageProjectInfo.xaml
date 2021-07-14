@@ -87,8 +87,13 @@
             <Label Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2">[Optional] Reference notebook pages</Label>
             <TextBox Grid.Column="2" Grid.Row="8" Text="{Binding Path=ReferenceDescription, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2">[Optional] Experiment Purpose</Label>
-            <TextBox Grid.Column="2" Grid.Row="9" Text="{Binding Path=PurposeDescription, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2">Collection Type</Label>
+            <ComboBox Grid.Column="2" Grid.Row="9" SelectedItem="{Binding Path=TypeOfSession, Mode=TwoWay}">
+                <sys:String>Screening Session</sys:String>
+                <sys:String>Tomography Session</sys:String>
+                <sys:String>Single-particle Collection</sys:String>
+                <sys:String>Other Session</sys:String>
+            </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2">Data Collection Software</Label>
             <ComboBox Grid.Column="2" Grid.Row="10" SelectedItem="{Binding Path=TypeOfSoftware, Mode=TwoWay}">

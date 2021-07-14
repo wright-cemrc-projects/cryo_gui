@@ -75,6 +75,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BoolToIndexConverter.cs" />
+    <Compile Include="PageImageTomo.xaml.cs">
+      <DependentUpon>PageImageTomo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageImageL120C.xaml.cs">
       <DependentUpon>PageImageL120C.xaml</DependentUpon>
     </Compile>
@@ -84,8 +87,8 @@
     <Compile Include="PageOpticsL120C.xaml.cs">
       <DependentUpon>PageOpticsL120C.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageStrategy.xaml.cs">
-      <DependentUpon>PageStrategy.xaml</DependentUpon>
+    <Compile Include="PageTomography.xaml.cs">
+      <DependentUpon>PageTomography.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageOptics.xaml.cs">
       <DependentUpon>PageOptics.xaml</DependentUpon>
@@ -94,6 +97,10 @@
     <Page Include="PageDone.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageImageTomo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="PageImageL120C.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -107,7 +114,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageStrategy.xaml">
+    <Page Include="PageTomography.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

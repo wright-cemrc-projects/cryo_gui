@@ -182,6 +182,17 @@ namespace CryoProject
             }
         }
 
+        private float m_dosePerTiltSeries = 1.0f;
+        public float DosePerTiltSeries
+        {
+            get { return m_dosePerTiltSeries; }
+            set
+            {
+                m_dosePerTiltSeries = value;
+                OnPropertyChanged("DosePerTiltSeries");
+            }
+        }
+
         private float m_dosePerFrame = 1.0f;
         public float DosePerFrame
         {
@@ -347,6 +358,18 @@ namespace CryoProject
             }
         }
 
+
+        private string m_typeOfSession = "Screening Session";
+        public string TypeOfSession
+        {
+            get { return m_typeOfSession; }
+            set
+            {
+                m_typeOfSession = value;
+                OnPropertyChanged("TypeOfSession");
+            }
+        }
+
         private string m_typeOfSoftware = "EPU";
         public string TypeOfSoftware
         {
@@ -402,6 +425,7 @@ namespace CryoProject
             }
         }
 
+        /* DEPRECATATED
         private string m_tiltSeries = "Yes";
         public string TiltSeries
         {
@@ -412,6 +436,7 @@ namespace CryoProject
                 OnPropertyChanged("TiltSeries");
             }
         }
+        */
 
         // Tilt-scheme (NA, uni-directional, bidirectional)
         private string m_tiltScheme = "NA";
@@ -462,7 +487,7 @@ namespace CryoProject
         }
 
         // Whether backend processing is enabled.
-        // [DEPRECATED in 1.11]
+        /** [DEPRECATED in 1.11]
         private string m_workflow = "On";
         public string Workflow
         {
@@ -473,8 +498,9 @@ namespace CryoProject
                 OnPropertyChanged("Workflow");
             }
         }
+        */
 
-        private string m_workflowOptions = "Relion";
+        private string m_workflowOptions = "None";
         public string WorkflowOptions
         {
             get { return m_workflowOptions; }
@@ -601,25 +627,36 @@ namespace CryoProject
             }
             builder.AppendLine();
 
-            // Page 3 : Image
+            // Page 3 : Image 
             builder.AppendLine("Type of camera = " + TypeOfCamera);
             if (!Instrument.Equals("L120C"))
             {
                 builder.AppendLine("Camera mode = " + ModeOfCamera);
                 builder.AppendLine("Using CDS = " + UsingCDS);
             }
-            builder.AppendLine("Pixel size (A) = " + PixelSize);
-            builder.AppendLine("Total dose per image (e-/A2) = " + DosePerImage);
-            builder.AppendLine("Number of frames = " + NumberOfFrames);
-            builder.AppendLine("Dose per frame (e-/A2) = " + DosePerFrame);
-            builder.AppendLine("Exposure time (sec) = " + ExposureTimePerImage);
 
-            // Exclude for L120C:
-            if (!Instrument.Equals("L120C"))
+            if (TypeOfSession.Equals("Tomography Session"))
             {
+                builder.AppendLine("Pixel size (A) (unbinned) = " + PixelSize);
+                builder.AppendLine("Dose per tilt (e-/A2) = " + DosePerImage);
+                builder.AppendLine("Total dose (e-/A2) = " + DosePerTiltSeries);
+                builder.AppendLine("Exposure time per tilt (sec) = " + ExposureTimePerImage);
                 builder.AppendLine("Dose rate (e-/pixel/sec) = " + DoseRate);
-                builder.AppendLine("Number of fractions = " + NumberOfFrames);
-            }
+            } else 
+            {
+                builder.AppendLine("Pixel size (A) (unbinned) = " + PixelSize);
+                builder.AppendLine("Total dose per image (e-/A2) = " + DosePerImage);
+                builder.AppendLine("Number of frames = " + NumberOfFrames);
+                builder.AppendLine("Dose per frame (e-/A2) = " + DosePerFrame);
+                builder.AppendLine("Exposure time (sec) = " + ExposureTimePerImage);
+
+                // Exclude for L120C:
+                if (!Instrument.Equals("L120C"))
+                {
+                    builder.AppendLine("Dose rate (e-/pixel/sec) = " + DoseRate);
+                    builder.AppendLine("Number of fractions = " + NumberOfFrames);
+                }
+            } 
 
             builder.AppendLine();
 
@@ -629,13 +666,9 @@ namespace CryoProject
             builder.AppendLine();
 
             // Page 5 : Processing specific information
-            builder.AppendLine("Automated processing = " + Workflow);
-            if (Workflow.Equals("On"))
-            {
-                builder.AppendLine("Options = " + WorkflowOptions);
-            }
+            builder.AppendLine("Automated processing options = " + WorkflowOptions);
 
-            if (TiltSeries.Equals("Yes"))
+            if (TypeOfSession.Equals("Tomography Session"))
             {
                 builder.AppendLine("Tilt Scheme: " + TiltScheme);
                 builder.AppendLine("Tilt Angle (degrees): " + TiltAngle);

@@ -39,7 +39,7 @@ namespace CryoProject
             }
             else
             {
-                p = new PageStrategy((Metadata)DataContext);
+                p = new PageTomography((Metadata)DataContext);
             }
             this.NavigationService.Navigate(p);
         }
