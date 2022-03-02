@@ -57,7 +57,8 @@
             <ComboBox Grid.Column="2" Grid.Row="1" SelectedItem="{Binding Path=Instrument, Mode=TwoWay}">
                 <sys:String>L120C</sys:String>
                 <sys:String>Arctica</sys:String>
-                <sys:String>Krios</sys:String>
+                <sys:String>Krios G3i</sys:String>
+                <sys:String>Krios G4</sys:String>
                 <sys:String>Aquilos</sys:String>
             </ComboBox>
 
