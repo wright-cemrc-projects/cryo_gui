@@ -70,6 +70,8 @@
 
             <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">Group (Last name or Company)</Label>
             <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=Group, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <!-- TODO: add a dropdown selection for Cryo-ET Centers groups if applicable -->
 
             <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">Sample Description</Label>
             <TextBox Grid.Column="2" Grid.Row="5" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}" />

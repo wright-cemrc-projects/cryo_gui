@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="155"/>
+            <RowDefinition Height="210"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -33,6 +33,9 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
@@ -54,6 +57,21 @@
             <ComboBox Margin="0" Grid.Column="1" Grid.Row="3" SelectedItem="{Binding Path=WorkflowOptions, Mode=TwoWay}">
                 <sys:String>MotionCor2</sys:String>
                 <sys:String>AlignFrames</sys:String>
+            </ComboBox>
+
+            <Label Grid.Column="0" Grid.Row="4">AreTomo: Set AlignZ: </Label>
+            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=AreTomo_AlignZ,  UpdateSourceTrigger=LostFocus,StringFormat=N3}"/>
+
+            <Label Grid.Column="0" Grid.Row="5">AreTomo: Enable TiltCor?</Label>
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="5" SelectedItem="{Binding Path=AreTomo_TiltCor, Mode=TwoWay}">
+                <sys:String>Disabled</sys:String>
+                <sys:String>Enabled</sys:String>
+            </ComboBox>
+
+            <Label Grid.Column="0" Grid.Row="6">AreTomo: Enable Patch Tracking?</Label>
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="6" SelectedItem="{Binding Path=AreTomo_Patch, Mode=TwoWay}">
+                <sys:String>Disabled</sys:String>
+                <sys:String>Enabled</sys:String>
             </ComboBox>
 
         </Grid>

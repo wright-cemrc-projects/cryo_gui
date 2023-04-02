@@ -15,7 +15,7 @@ namespace CryoProject
         // 1.06 adding fields for OperatorID
         // 1.10 adding separate page for L120C options
 
-        private String m_version = "1.10";
+        private String m_version = "1.2";
         public String Version
         {
             get { return m_version; }
@@ -486,6 +486,39 @@ namespace CryoProject
             }
         }
 
+        private int m_AreTomo_AlignZ = 800;
+        public int AreTomo_AlignZ
+        {
+            get { return m_AreTomo_AlignZ; }
+            set
+            {
+                m_AreTomo_AlignZ = value;
+                OnPropertyChanged("AreTomo_AlignZ");
+            }
+        }
+
+        private string m_AreTomo_TiltCor = "Enabled";
+        public string AreTomo_TiltCor
+        {
+            get { return m_AreTomo_TiltCor; }
+            set
+            {
+                m_AreTomo_TiltCor = value;
+                OnPropertyChanged("AreTomo_TiltCor");
+            }
+        }
+
+        private string m_AreTomo_Patch = "Enabled";
+        public string AreTomo_Patch
+        {
+            get { return m_AreTomo_Patch; }
+            set
+            {
+                m_AreTomo_Patch = value;
+                OnPropertyChanged("AreTomo_Patch");
+            }
+        }
+
         // Whether backend processing is enabled.
         /** [DEPRECATED in 1.11]
         private string m_workflow = "On";
@@ -673,6 +706,9 @@ namespace CryoProject
                 builder.AppendLine("Tilt Scheme: " + TiltScheme);
                 builder.AppendLine("Tilt Angle (degrees): " + TiltAngle);
                 builder.AppendLine("Tilt Range (degrees): " + TiltRange);
+                builder.AppendLine("AreTomo AlignZ: " + AreTomo_AlignZ);
+                builder.AppendLine("AreTomo TiltCor: " + AreTomo_TiltCor);
+                builder.AppendLine("AreTomo Patch: " + AreTomo_Patch);
             }
 
             return builder.ToString();
