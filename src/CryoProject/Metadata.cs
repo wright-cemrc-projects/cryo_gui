@@ -533,7 +533,7 @@ namespace CryoProject
         }
         */
 
-        private string m_workflowOptions = "None";
+        private string m_workflowOptions = "MotionCor2";
         public string WorkflowOptions
         {
             get { return m_workflowOptions; }
