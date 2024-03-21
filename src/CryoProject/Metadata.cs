@@ -486,7 +486,18 @@ namespace CryoProject
             }
         }
 
-        private int m_AreTomo_AlignZ = 800;
+        private int m_AreTomo_VolZ = 1600;
+        public int AreTomo_VolZ
+        {
+            get { return m_AreTomo_VolZ; }
+            set
+            {
+                m_AreTomo_VolZ = value;
+                OnPropertyChanged("AreTomo_VolZ");
+            }
+        }
+
+        private int m_AreTomo_AlignZ = 1200;
         public int AreTomo_AlignZ
         {
             get { return m_AreTomo_AlignZ; }
@@ -706,6 +717,7 @@ namespace CryoProject
                 builder.AppendLine("Tilt Scheme: " + TiltScheme);
                 builder.AppendLine("Tilt Angle (degrees): " + TiltAngle);
                 builder.AppendLine("Tilt Range (degrees): " + TiltRange);
+                builder.AppendLine("AreTomo VolZ: " + AreTomo_VolZ);
                 builder.AppendLine("AreTomo AlignZ: " + AreTomo_AlignZ);
                 builder.AppendLine("AreTomo TiltCor: " + AreTomo_TiltCor);
                 builder.AppendLine("AreTomo Patch: " + AreTomo_Patch);

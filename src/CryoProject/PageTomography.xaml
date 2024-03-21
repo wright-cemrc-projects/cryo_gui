@@ -17,7 +17,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="210"/>
+            <RowDefinition Height="235"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -40,7 +40,8 @@
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
-            </Grid.RowDefinitions>
+				<RowDefinition Height="25" />
+			</Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="1">Tilt-scheme</Label>
             <ComboBox Margin="0" Grid.Column="1" Grid.Row="1" SelectedItem="{Binding Path=TiltScheme, Mode=TwoWay}">
@@ -59,17 +60,20 @@
                 <sys:String>AlignFrames</sys:String>
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="4">AreTomo: Set AlignZ: </Label>
-            <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=AreTomo_AlignZ,  UpdateSourceTrigger=LostFocus,StringFormat=N3}"/>
+			<Label Grid.Column="0" Grid.Row="4">AreTomo: Set VolZ (volume height in voxels):</Label>
+			<TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=AreTomo_VolZ,  UpdateSourceTrigger=LostFocus,StringFormat=N0}"/>
 
-            <Label Grid.Column="0" Grid.Row="5">AreTomo: Enable TiltCor?</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="5" SelectedItem="{Binding Path=AreTomo_TiltCor, Mode=TwoWay}">
+			<Label Grid.Column="0" Grid.Row="5">AreTomo: Set AlignZ (alignment range in voxels): </Label>
+            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=AreTomo_AlignZ,  UpdateSourceTrigger=LostFocus,StringFormat=N0}"/>
+
+            <Label Grid.Column="0" Grid.Row="6">AreTomo: Enable TiltCor?</Label>
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="6" SelectedItem="{Binding Path=AreTomo_TiltCor, Mode=TwoWay}">
                 <sys:String>Disabled</sys:String>
                 <sys:String>Enabled</sys:String>
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="6">AreTomo: Enable Patch Tracking?</Label>
-            <ComboBox Margin="0" Grid.Column="1" Grid.Row="6" SelectedItem="{Binding Path=AreTomo_Patch, Mode=TwoWay}">
+            <Label Grid.Column="0" Grid.Row="7">AreTomo: Enable Patch Tracking?</Label>
+            <ComboBox Margin="0" Grid.Column="1" Grid.Row="7" SelectedItem="{Binding Path=AreTomo_Patch, Mode=TwoWay}">
                 <sys:String>Disabled</sys:String>
                 <sys:String>Enabled</sys:String>
             </ComboBox>
