@@ -102,6 +102,7 @@
             <ComboBox Grid.Column="2" Grid.Row="10" SelectedItem="{Binding Path=TypeOfSoftware, Mode=TwoWay}">
                 <sys:String>SerialEM</sys:String>
                 <sys:String>EPU</sys:String>
+                <sys:String>Tomo5</sys:String>
             </ComboBox>
 
             <!-- View report button -->

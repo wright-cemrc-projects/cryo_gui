@@ -14,8 +14,9 @@ namespace CryoProject
         // 1.06 adding fields for ModeOfCamera
         // 1.06 adding fields for OperatorID
         // 1.10 adding separate page for L120C options
+        // 1.30 updating tomography page for VolZ and documentations.
 
-        private String m_version = "1.2";
+        private String m_version = "1.3";
         public String Version
         {
             get { return m_version; }
@@ -508,7 +509,7 @@ namespace CryoProject
             }
         }
 
-        private string m_AreTomo_TiltCor = "Enabled";
+        private string m_AreTomo_TiltCor = "Disabled";
         public string AreTomo_TiltCor
         {
             get { return m_AreTomo_TiltCor; }
