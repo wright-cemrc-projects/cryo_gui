@@ -36,6 +36,9 @@ namespace CryoProject
             if (data.TypeOfSoftware == "EPU")
             {
                 p = new PageEPU((Metadata)DataContext);
+            } else if (data.TypeOfSession == "Single-particle Collection")
+            {
+                p = new PageDone((Metadata)DataContext);
             }
             else
             {

@@ -50,7 +50,6 @@
             <Label Grid.Column="0" Grid.Row="2"  HorizontalAlignment="Center">Automated processing workflow</Label>
             <ComboBox Margin="0" Grid.Column="1" Grid.Row="2" SelectedItem="{Binding Path=WorkflowOptions, Mode=TwoWay}">
                 <sys:String>Relion</sys:String>
-                <sys:String>CryoSparc</sys:String>
                 <sys:String>MotionCor2+gCTF</sys:String>
                 <sys:String>None</sys:String>
             </ComboBox>

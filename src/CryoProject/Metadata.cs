@@ -15,8 +15,9 @@ namespace CryoProject
         // 1.06 adding fields for OperatorID
         // 1.10 adding separate page for L120C options
         // 1.30 updating tomography page for VolZ and documentations.
+        // 1.40 updates requested from Operations Manager
 
-        private String m_version = "1.3";
+        private String m_version = "1.4";
         public String Version
         {
             get { return m_version; }
@@ -150,7 +151,8 @@ namespace CryoProject
             }
         }
 
-        private float m_pixelSize = 1.0f;
+        // 2024.05.07 Default value to indicate it has not been changed by user.
+        private float m_pixelSize = 0.0f;
         public float PixelSize
         {
             get { return m_pixelSize; }
@@ -172,7 +174,8 @@ namespace CryoProject
             }
         }
 
-        private float m_dosePerImage = 1.0f;
+        // 2024.05.07 Default value to indicate it has not been changed by user.
+        private float m_dosePerImage = 0.0f;
         public float DosePerImage
         {
             get { return m_dosePerImage; }
@@ -183,7 +186,8 @@ namespace CryoProject
             }
         }
 
-        private float m_dosePerTiltSeries = 1.0f;
+        // 2024.05.07 Default value to indicate it has not been changed by user.
+        private float m_dosePerTiltSeries = 0.0f;
         public float DosePerTiltSeries
         {
             get { return m_dosePerTiltSeries; }
@@ -205,7 +209,8 @@ namespace CryoProject
             }
         }
 
-        private float m_doseRate = 1.0f;
+        // 2024.05.07 Default value to indicate it has not been changed by user.
+        private float m_doseRate = 0.0f;
         public float DoseRate
         {
             get { return m_doseRate; }
@@ -216,7 +221,8 @@ namespace CryoProject
             }
         }
 
-        private float m_exposureTimePerImage = 1.0f;
+        // 2024.05.07 Default value to indicate it has not been changed by user.
+        private float m_exposureTimePerImage = 0.0f;
         public float ExposureTimePerImage
         {
             get { return m_exposureTimePerImage; }
@@ -227,7 +233,8 @@ namespace CryoProject
             }
         }
 
-        private float m_spotSize = 1.0f;
+        // Spot size default for L120C
+        private float m_spotSize = 3.0f;
         public float SpotSize
         {
             get { return m_spotSize; }
@@ -271,7 +278,8 @@ namespace CryoProject
             }
         }
 
-        private float m_c2lensPower = 0.1f;
+        // 2024.05.07 Default value to indicate it has not been changed by user.
+        private float m_c2lensPower = 0.0f;
         public float C2LensPower
         {
             get { return m_c2lensPower; }
@@ -282,7 +290,8 @@ namespace CryoProject
             }
         }
 
-        private float m_illuminatedArea = 0.1f;
+        // 2024.05.07 Default value to indicate it has not been changed by user.
+        private float m_illuminatedArea = 0.0f;
         public float IlluminatedArea
         {
             get { return m_illuminatedArea; }
@@ -293,7 +302,8 @@ namespace CryoProject
             }
         }
 
-        private String m_typeOfGrid = "Carbon Foil";
+        // 2024.05.07 Different defaults needed her per instrument type.
+        private String m_typeOfGrid = "Carbon Foil Cu 200 mesh";
         public String TypeOfGrid
         {
             get { return m_typeOfGrid; }

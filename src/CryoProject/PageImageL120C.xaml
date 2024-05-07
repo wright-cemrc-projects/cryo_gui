@@ -40,7 +40,7 @@
 
             <Label Grid.Column="0" Grid.Row="0">Detector type</Label>
             <ComboBox Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=TypeOfCamera, Mode=TwoWay}" HorizontalAlignment="Left" Width="300">
-                <sys:String>Ceta-M</sys:String>
+                <sys:String>CetaM</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="1" Content="Pixel Size (Å) (unbinned)"/>

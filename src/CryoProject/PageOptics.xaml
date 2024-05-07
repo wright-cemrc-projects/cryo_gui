@@ -47,8 +47,8 @@
 
             <Label Grid.Column="0" Grid.Row="1">Imaging Probe</Label>
             <ComboBox Margin="0" Grid.Column="1" Grid.Row="1" SelectedItem="{Binding Path=ImagingProbe, Mode=TwoWay}">
-                <sys:String>MicroProbe</sys:String>
-                <sys:String>NanoProbe</sys:String>
+                <sys:String>Micro probe</sys:String>
+                <sys:String>Nano probe</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="0">Imaging Mode</Label>
