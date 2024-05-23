@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Media3D;
 
 namespace CryoProject
 {
@@ -47,7 +48,7 @@ namespace CryoProject
             set
             {
                 m_instrument = value;
-                OnPropertyChanged("Insturment");
+                OnPropertyChanged("Instrument");
             }
         }
 
@@ -96,8 +97,8 @@ namespace CryoProject
             }
         }
 
-        private String m_biosafetyLevel = "";
-        public String BiosafetyLevel
+        private int m_biosafetyLevel = 1;
+        public int BiosafetyLevel
         {
             get { return m_biosafetyLevel; }
             set
@@ -436,6 +437,17 @@ namespace CryoProject
             }
         }
 
+        private string m_usingEER = "No";
+        public string UsingEER
+        {
+            get { return m_usingEER; }
+            set
+            {
+                m_usingEER = value;
+                OnPropertyChanged("UsingEER");
+            }
+        }
+
         /* DEPRECATATED
         private string m_tiltSeries = "Yes";
         public string TiltSeries
@@ -744,5 +756,139 @@ namespace CryoProject
                 outputFile.Write(BuildText());
             }
         }
+
+        public void SetDefaults(string instrument)
+        {
+            instrument = instrument.ToLower();
+
+            switch (instrument)
+            {
+                case "l120c":
+                    SetupL120C();
+                    break;
+                case "arctica":
+                    SetupArctica();
+                    break;
+                case "krios g4":
+                    SetupKriosG4();
+                    break;
+                case "krios g3i":
+                    SetupKriosG3i();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void SetupL120C()
+        {
+            Instrument = "L120C";
+            TypeOfGrid = "Carbon Foil Cu 200 mesh";
+            TypeOfSession = "Screening Session";
+            BiosafetyLevel = 1;
+            // TODO: Options for Session type: Screening, tomography, SPA, other.
+            ImagingProbe = "Micro probe";
+            ImagingMode = "EFTEM";
+            SpotSize = 3;
+            C2Aperture = 100;
+            C2LensPower = 0;
+            IlluminatedArea = 0;
+            ObjectiveAperture = 100;
+            Voltage = 120;
+            Holder = "Single-tilt, dry";
+            // TODO: Options for holder.
+            TypeOfCamera = "Ceta-M";
+            PixelSize = 0;
+            DosePerImage = 0;
+            ExposureTimePerImage = 0;
+            TypeOfSoftware = "SerialEM";
+            // TODO: Do not show tilt scheme options when selecting SPA or screening.
+        }
+
+        private void SetupArctica()
+        {
+            Instrument = "Arctica";
+            TypeOfGrid = "QF R1.2/1.3 Cu 300 mesh";
+            TypeOfSession = "Single Particle Session";
+            BiosafetyLevel = 1;
+            // TODO: Options for Session type: Screening, tomography, SPA, other.
+            ImagingProbe = "Nano probe";
+            ImagingMode = "EFTEM";
+            SpotSize = 4;
+            C2Aperture = 70;
+            C2LensPower = 41.019f;
+            IlluminatedArea = 2.15f;
+            ObjectiveAperture = 100;
+            EnergyFilterSlitWidth = 20;
+            Voltage = 200;
+            TypeOfCamera = "Gatan K3";
+            // Camera types should include: Gatan K3, Ceta-M, Falcon 3EC # ideal of K3 not shown for TEM
+            // Detector Mode: Counting, Super-resolution, Linear
+            ModeOfCamera = "Counting";
+            UsingCDS = "Yes";
+            PixelSize = 0;
+            DosePerImage = 0;
+            ExposureTimePerImage = 0;
+            DoseRate = 0;
+            NumberOfFrames = 0;
+            DosePerFrame = 1;
+        }
+
+        private void SetupKriosG3i()
+        {
+            Instrument = "Krios G3i";
+            TypeOfGrid = "QF R1.2/1.3 Cu 300 mesh";
+            TypeOfSession = "Single Particle Session";
+            BiosafetyLevel = 1;
+            // TODO: Options for Session type: Screening, tomography, SPA, microED, other
+            // TODO: Options for Data collection software: SerialEM, EPU, Tomo5, EPUD
+            // TODO: Imaging Mode options of EFTEM and TEM
+            ImagingProbe = "Nano probe";
+            ImagingMode = "EFTEM";
+            SpotSize = 8;
+            C2Aperture = 70;
+            C2LensPower = 0; // Ideally would remove on this system
+            ObjectiveAperture = 100;
+            EnergyFilterSlitWidth = 20;
+            Voltage = 300;
+            TypeOfCamera = "Gatan K3";
+            // Camera types should include: Gatan K3, Ceta-D, Falcon 3EC 
+            // K3 for EFTEM, Ceta and Falcon for TEM
+            ModeOfCamera = "Counting";
+            UsingCDS = "Yes";
+            PixelSize = 0;
+            DosePerImage = 0;
+            NumberOfFrames = 0;
+            DosePerFrame = 1;
+        }
+
+        private void SetupKriosG4()
+        {
+            Instrument = "Krios G4";
+            TypeOfGrid = "QF R2/1 Au 200 mesh";
+            TypeOfSession = "Tomography Session";
+            BiosafetyLevel = 1;
+            // TODO: Options for Session type: Screening, tomography, SPA, microED, other
+            // TODO: Options for Data collection software: SerialEM, EPU, Tomo5, EPUD
+            // TODO: Imaging mode options of EFTEM, TEM
+            ImagingProbe = "Nano probe";
+            ImagingMode = "EFTEM";
+            SpotSize = 6;
+            C2Aperture = 70;
+            C2LensPower = 0; // Hide if possible for the G4
+            IlluminatedArea = 0;
+            ObjectiveAperture = 100;
+            EnergyFilterSlitWidth = 10; // ideally change to 0 or NA on TEM mode choice.
+            Voltage = 300;
+            TypeOfCamera = "EF-Falcon4i"; // BM-Falcon4i, Ceta-D (check if this change affects downstream)
+            // Camera types include "EF-Falcon4i, BM-Falcon4i, Ceta-D
+            ModeOfCamera = "Counting";
+            UsingEER = "Yes";
+            PixelSize = 0;
+            DosePerImage = 0;
+        }
+
+        // Consider removing CryoSPARC from the Automated processing options.
+        // Or if we can get cryosparc-tools hooked into the pipeline could be nice.
     }
 }

@@ -40,9 +40,24 @@ namespace CryoProject
             }
             else
             {
-                p = new PageImage(data);
+                switch (data.Instrument)
+                {
+                    case "Krios G3i":
+                        p = new PageImageKriosG3i(data); break;
+                    case "Krios G4":
+                        p = new PageImageKriosG4(data); break;
+                    case "Arctica":
+                        p = new PageImageArctica(data); break;
+                    case "L120C":
+                        p = new PageImageL120C(data); break;
+                    default:
+                        p = new PageImage(data);
+                        break;
+                }
             }
             this.NavigationService.Navigate(p);
+
+          
         }
 
      }

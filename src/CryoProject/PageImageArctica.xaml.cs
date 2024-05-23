@@ -20,10 +20,10 @@ namespace CryoProject
     /// <summary>
     /// Interaction logic for CollectionInfoPage.xaml
     /// </summary>
-    public partial class PageImageL120C : Page
+    public partial class PageImageArctica : Page
     {
         // Will be updated and used to save results.
-        public PageImageL120C(Metadata data)
+        public PageImageArctica(Metadata data)
         {
             InitializeComponent();
             DataContext = data;
@@ -34,15 +34,30 @@ namespace CryoProject
             Metadata data = (Metadata)DataContext;
             Page p;
 
-            // L120C doesn't have EPU, next page is either additional SerialEM Tomography details, or ending.
-            if (data.TypeOfSession == "Tomography Session")
+            switch (data.TypeOfSession)
             {
-                p = new PageTomography((Metadata)DataContext);
+
+                case "Single Particle Session":
+                    if (data.TypeOfSoftware == "EPU")
+                    {
+                        p = new PageEPU((Metadata)DataContext);
+                    }
+                    else
+                    {
+                        p = new PageDone((Metadata)DataContext);
+                    }
+                    break;
+                case "Microcrystal Electron Diffraction Session":
+                    p = new PageDone((Metadata)DataContext);
+                    break;
+                case "Tomography Session":
+                    p = new PageTomography((Metadata)DataContext);
+                    break;
+                default:
+                    p = new PageDone((Metadata)DataContext);
+                    break;
             }
-            else
-            {
-                p = new PageDone((Metadata)DataContext);
-            }
+
             this.NavigationService.Navigate(p);
         }
 

@@ -1,4 +1,4 @@
-﻿<Page x:Class="CryoProject.PageImageTomo"
+﻿<Page x:Class="CryoProject.PageImageKriosG3i"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:CryoProject" xmlns:sys="clr-namespace:System;assembly=mscorlib"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="800"
-      Title="Imaging for Tomography Collection">
+      Title="Optics">
 
     <Grid Margin="10,0,10,10">
         <Grid.ColumnDefinitions>
@@ -17,13 +17,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="200"/>
+            <RowDefinition Height="225"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
         <!-- People list -->
         <Border Grid.Column="1" Grid.Row="1" Height="35" Padding="5" Background="#4E87D4">
-            <Label VerticalAlignment="Center" Foreground="White">Imaging (Tomography)</Label>
+            <Label VerticalAlignment="Center" Foreground="White">Imaging</Label>
         </Border>
 
         <Grid Grid.Column="1" Grid.Row="2" Background="White">
@@ -40,14 +40,14 @@
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
                 <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0">Detector type</Label>
             <ComboBox Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=TypeOfCamera, Mode=TwoWay}" HorizontalAlignment="Left" Width="300">
-                <sys:String>Falcon 3EC</sys:String>
-                <sys:String>EF-Falcon 4i</sys:String>
-                <sys:String>BM-Falcon 4i</sys:String>
                 <sys:String>Gatan K3</sys:String>
+                <sys:String>Falcon 3EC</sys:String>
                 <sys:String>Ceta-M</sys:String>
             </ComboBox>
 
@@ -67,17 +67,20 @@
             <Label Grid.Column="0" Grid.Row="3" Content="Pixel Size (Å) (unbinned)"/>
             <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=PixelSize,  UpdateSourceTrigger=LostFocus,StringFormat=N3}"/>
 
-            <Label Grid.Column="0" Grid.Row="4">Dose per tilt acquisition (e-/Å2)</Label>
+            <Label Grid.Column="0" Grid.Row="4">Total dose per image (e-/Å2)</Label>
             <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=DosePerImage,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="5">Total dose (e-/Å2)</Label>
-            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=DosePerTiltSeries,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="5">Exposure time per image (sec)</Label>
+            <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="6">Exposure time per tilt (sec)</Label>
-            <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="6">Dose rate (e-/pixel/sec) </Label>
+            <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=DoseRate,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="7">Dose rate (e-/pixel/sec) </Label>
-            <TextBox Grid.Column="1" Grid.Row="7" Text="{Binding Path=DoseRate,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
+            <Label Grid.Column="0" Grid.Row="7">Number of fractions</Label>
+            <TextBox Grid.Column="1" Grid.Row="7" Text="{Binding Path=NumberOfFrames,  UpdateSourceTrigger=LostFocus,StringFormat=N0}"/>
+
+            <Label Grid.Column="0" Grid.Row="8">Dose per fraction (e-/Å2)</Label>
+            <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding Path=DosePerFrame,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
         </Grid>
 

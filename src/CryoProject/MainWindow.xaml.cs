@@ -26,7 +26,31 @@ namespace CryoProject
         {
             InitializeComponent();
 
+            // Setup a dictionary for commandline arguments.
+            string[] args = Environment.GetCommandLineArgs();
+
+            // If specified, choose a default state for the metadata.
+            Dictionary<string, string> arguments =
+                new Dictionary<string, string>();
+
+            Console.WriteLine("Should have arguments:");
+
+            for (int index = 1; index < args.Length; index += 2)
+            {
+                string arg = args[index].Replace("--", "");
+                Console.WriteLine("Found this argument: " + arg);
+                if (args.Length > index + 1)
+                {
+                    string value = args[index + 1].Replace("_", " ");
+                    arguments.Add(arg, value);
+                }
+            }
+
             Metadata state = new Metadata();
+            if (arguments.ContainsKey("instrument"))
+            {
+                state.SetDefaults(arguments["instrument"]);
+            }
 
             string filename = "defaults.json";
 

@@ -59,7 +59,8 @@
                 <sys:String>Arctica</sys:String>
                 <sys:String>Krios G3i</sys:String>
                 <sys:String>Krios G4</sys:String>
-                <sys:String>Aquilos</sys:String>
+                <sys:String>CEMRC Aquilos</sys:String>
+                <sys:String>MCCET Aquilos</sys:String>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">Instrument Operator (NetID)</Label>
@@ -78,8 +79,8 @@
 
             <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">Biosafety Level</Label>
             <ComboBox Margin="0,0.4" Grid.Column="2" Grid.Row="6" SelectedItem="{Binding Path=BiosafetyLevel, Mode=TwoWay}">
-                <sys:String>1</sys:String>
-                <sys:String>2</sys:String>
+                <sys:Int32>1</sys:Int32>
+                <sys:Int32>2</sys:Int32>
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2">Type of Grid</Label>
@@ -88,16 +89,16 @@
             <Label Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2">[Optional] Reference notebook pages</Label>
             <TextBox Grid.Column="2" Grid.Row="8" Text="{Binding Path=ReferenceDescription, UpdateSourceTrigger=PropertyChanged}" />
 
-            <!-- TODO: can we change these wording without breaking downstream enqueue scripts? --> 
             <Label Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2">Collection Type</Label>
             <ComboBox Grid.Column="2" Grid.Row="9" SelectedItem="{Binding Path=TypeOfSession, Mode=TwoWay}">
                 <sys:String>Screening Session</sys:String>
                 <sys:String>Tomography Session</sys:String>
-                <sys:String>Single-particle Collection</sys:String>
+                <sys:String>Single Particle Session</sys:String>
+                <sys:String>Microcrystal Electron Diffraction Session</sys:String>
                 <sys:String>Other Session</sys:String>
             </ComboBox>
 
-            <!-- TODO: we need different options here depending on system, how? -->
+            <!-- TODO: If screening (SerialEM, EPU, Tomo5) -->
             <Label Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2">Data Collection Software</Label>
             <ComboBox Grid.Column="2" Grid.Row="10" SelectedItem="{Binding Path=TypeOfSoftware, Mode=TwoWay}">
                 <sys:String>SerialEM</sys:String>

@@ -67,13 +67,31 @@ namespace CryoProject
             }
             else {
                 Page p;
-                if (data.Instrument == "L120C")
-                {
-                    p = new PageOpticsL120C((Metadata)DataContext);
-                } else
-                {
-                    p = new PageOptics((Metadata)DataContext);
+
+                switch (data.Instrument) {
+                    case "L120C":
+                        p = new PageOpticsL120C((Metadata)DataContext);
+                        break;
+                    case "Arctica":
+                        p = new PageOptics((Metadata)DataContext);
+                        break;
+                    case "Krios G3i":
+                        p = new PageOptics((Metadata)DataContext);
+                        break;
+                    case "Krios G4":
+                        p = new PageOptics((Metadata)DataContext);
+                        break;
+                    case "CEMRC Aquilos":
+                        p = new PageDone((Metadata)DataContext);
+                        break;
+                    case "MCCET Aquilos":
+                        p = new PageDone((Metadata)DataContext);
+                        break;
+                    default:
+                        p = new PageOptics((Metadata)DataContext);
+                        break;
                 }
+
                 this.NavigationService.Navigate(p);
             }
         }
