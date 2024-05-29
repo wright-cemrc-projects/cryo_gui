@@ -36,7 +36,17 @@ namespace CryoProject
             Page p;
             if (data.TypeOfSession.Equals("Tomography Session"))
             {
-                p = new PageImageTomo(data);
+                switch (data.Instrument)
+                {
+                    case "Krios G3i":
+                        p = new PageImageTomoG3i(data); break;
+                    case "Krios G4":
+                        p = new PageImageTomoG4(data); break;
+                    case "L120C":
+                        p = new PageImageL120C(data); break;
+                    default:
+                        p = new PageImageTomoG3i(data); break;
+                }
             }
             else
             {

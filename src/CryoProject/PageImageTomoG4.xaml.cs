@@ -20,10 +20,10 @@ namespace CryoProject
     /// <summary>
     /// Interaction logic for CollectionInfoPage.xaml
     /// </summary>
-    public partial class PageImageTomo : Page
+    public partial class PageImageTomoG4 : Page
     {
         // Will be updated and used to save results.
-        public PageImageTomo(Metadata data)
+        public PageImageTomoG4(Metadata data)
         {
             InitializeComponent();
             DataContext = data;
@@ -33,13 +33,16 @@ namespace CryoProject
         {
             Metadata data = (Metadata)DataContext;
             Page p;
-            if (data.TypeOfSoftware == "EPU")
+            if (data.TypeOfSession == "Tomography Session")
+            {
+                p = new PageTomography((Metadata)DataContext);
+            } else if (data.TypeOfSoftware == "EPU")
             {
                 p = new PageEPU((Metadata)DataContext);
             }
             else
             {
-                p = new PageTomography((Metadata)DataContext);
+                p = new PageDone((Metadata)DataContext);
             }
             this.NavigationService.Navigate(p);
         }

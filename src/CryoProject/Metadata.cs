@@ -810,6 +810,7 @@ namespace CryoProject
             Instrument = "Arctica";
             TypeOfGrid = "QF R1.2/1.3 Cu 300 mesh";
             TypeOfSession = "Single Particle Session";
+            TypeOfSoftware = "EPU";
             BiosafetyLevel = 1;
             // TODO: Options for Session type: Screening, tomography, SPA, other.
             ImagingProbe = "Nano probe";
@@ -839,6 +840,7 @@ namespace CryoProject
             Instrument = "Krios G3i";
             TypeOfGrid = "QF R1.2/1.3 Cu 300 mesh";
             TypeOfSession = "Single Particle Session";
+            TypeOfSoftware = "EPU";
             BiosafetyLevel = 1;
             // TODO: Options for Session type: Screening, tomography, SPA, microED, other
             // TODO: Options for Data collection software: SerialEM, EPU, Tomo5, EPUD
@@ -867,6 +869,7 @@ namespace CryoProject
             Instrument = "Krios G4";
             TypeOfGrid = "QF R2/1 Au 200 mesh";
             TypeOfSession = "Tomography Session";
+            TypeOfSoftware = "SerialEM";
             BiosafetyLevel = 1;
             // TODO: Options for Session type: Screening, tomography, SPA, microED, other
             // TODO: Options for Data collection software: SerialEM, EPU, Tomo5, EPUD
@@ -880,7 +883,7 @@ namespace CryoProject
             ObjectiveAperture = 100;
             EnergyFilterSlitWidth = 10; // ideally change to 0 or NA on TEM mode choice.
             Voltage = 300;
-            TypeOfCamera = "EF-Falcon4i"; // BM-Falcon4i, Ceta-D (check if this change affects downstream)
+            TypeOfCamera = "EF-Falcon 4i"; // BM-Falcon4i, Ceta-D (check if this change affects downstream)
             // Camera types include "EF-Falcon4i, BM-Falcon4i, Ceta-D
             ModeOfCamera = "Counting";
             UsingEER = "Yes";
