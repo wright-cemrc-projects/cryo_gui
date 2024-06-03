@@ -803,6 +803,7 @@ namespace CryoProject
             ExposureTimePerImage = 0;
             TypeOfSoftware = "SerialEM";
             // TODO: Do not show tilt scheme options when selecting SPA or screening.
+            Console.WriteLine("Defaults for L120C");
         }
 
         private void SetupArctica()

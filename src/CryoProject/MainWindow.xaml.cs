@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace CryoProject
 {
@@ -25,6 +26,19 @@ namespace CryoProject
         public MainWindow()
         {
             InitializeComponent();
+            NewProject();
+        }
+
+        private void ClearNavigationHistory()
+        {
+            var navigationService = MainFrame.NavigationService;
+            while (navigationService.CanGoBack)
+            {
+                navigationService.RemoveBackEntry();
+            }
+        }
+
+        private void NewProject() { 
 
             // Setup a dictionary for commandline arguments.
             string[] args = Environment.GetCommandLineArgs();
@@ -33,16 +47,14 @@ namespace CryoProject
             Dictionary<string, string> arguments =
                 new Dictionary<string, string>();
 
-            Console.WriteLine("Should have arguments:");
-
             for (int index = 1; index < args.Length; index += 2)
             {
                 string arg = args[index].Replace("--", "");
-                Console.WriteLine("Found this argument: " + arg);
                 if (args.Length > index + 1)
                 {
                     string value = args[index + 1].Replace("_", " ");
                     arguments.Add(arg, value);
+                    Console.WriteLine("Found this argument: " + arg + " " + value);
                 }
             }
 
@@ -65,8 +77,45 @@ namespace CryoProject
                 }
             }
 
+            // Clear navigation history after navigation
+            // MainFrame.Navigated += (s, n_args) => ClearNavigationHistory();
+
             // Create the application state and set for the first time.
-            Content = new PageProjectInfo(state);
+            MainFrame.Navigate(new PageProjectInfo(state));
+
+        }
+
+        private void New_Click(object sender, RoutedEventArgs e)
+        {
+            // Handle New menu item click
+            NewProject();
+        }
+
+        private void Open_Click(object sender, RoutedEventArgs e)
+        {
+            // Handle Open menu item click
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "JSON file (*.json)|*.json|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Handle file open logic here
+                string selectedFilePath = openFileDialog.FileName;
+
+                // Read the content of the file
+                string fileContent = File.ReadAllText(openFileDialog.FileName);
+                Metadata meta = JsonConvert.DeserializeObject<Metadata>(fileContent);
+
+                // Clear navigation history after navigation
+                // MainFrame.Navigated += (s, n_args) => ClearNavigationHistory();
+
+                MainFrame.Navigate(new PageProjectInfo(meta));
+            }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            // Handle Exit menu item click
+            this.Close();
         }
     }
 }

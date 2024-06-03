@@ -9,6 +9,7 @@
       Title="Data Collection">
 
     <Grid Margin="10,0,10,10">
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition  />
             <ColumnDefinition Width="600"/>

@@ -6,6 +6,18 @@
         xmlns:local="clr-namespace:CryoProject"
         mc:Ignorable="d"
         Icon="icon.png"
-        Title="Cryo-EM Research Center" Height="700" Width="800" Source="PageProjectInfo.xaml">
-
+        Title="Cryo-EM Research Center" Height="750" Width="800" Source="PageProjectInfo.xaml">
+    <NavigationWindow.Content>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New" Click="New_Click"/>
+                    <MenuItem Header="_Open" Click="Open_Click"/>
+                    <Separator />
+                    <MenuItem Header="E_xit" Click="Exit_Click"/>
+                </MenuItem>
+            </Menu>
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+        </DockPanel>
+    </NavigationWindow.Content>
 </NavigationWindow>
