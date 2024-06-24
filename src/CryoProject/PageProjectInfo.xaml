@@ -55,13 +55,24 @@
             <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=Date, StringFormat='yyyy-MM-dd'}" />
 
             <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">Instrument</Label>
+
+            <ContentControl Content="{StaticResource helpIcon}" Width="16" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1">
+                <ContentControl.ToolTip>
+                    <ToolTip>
+                        <TextBlock Text="Select one of the Cryo-TEM instruments"/>
+                    </ToolTip>
+                </ContentControl.ToolTip>
+            </ContentControl>
+
             <ComboBox Grid.Column="2" Grid.Row="1" SelectedItem="{Binding Path=Instrument, Mode=TwoWay}">
                 <sys:String>L120C</sys:String>
                 <sys:String>Arctica</sys:String>
                 <sys:String>Krios G3i</sys:String>
                 <sys:String>Krios G4</sys:String>
-                <sys:String>CEMRC Aquilos</sys:String>
-                <sys:String>MCCET Aquilos</sys:String>
+                <!-- 
+                 <sys:String>CEMRC Aquilos</sys:String>
+                 <sys:String>MCCET Aquilos</sys:String> 
+                -->
             </ComboBox>
 
             <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">Instrument Operator (NetID)</Label>
@@ -71,8 +82,15 @@
             <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Path=User, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">Group (Last name or Company)</Label>
+            <ContentControl Content="{StaticResource helpIcon}" Width="16" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4">
+                <ContentControl.ToolTip>
+                    <ToolTip>
+                        <TextBlock Text="Enter 'cryoet-centers' for MCCET groups"/>
+                    </ToolTip>
+                </ContentControl.ToolTip>
+            </ContentControl>
             <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=Group, UpdateSourceTrigger=PropertyChanged}" />
-            
+
             <!-- TODO: add a dropdown selection for Cryo-ET Centers groups if applicable -->
 
             <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">Sample Description</Label>
