@@ -56,14 +56,6 @@
 
             <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">Instrument</Label>
 
-            <ContentControl Content="{StaticResource helpIcon}" Width="16" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1">
-                <ContentControl.ToolTip>
-                    <ToolTip>
-                        <TextBlock Text="Select one of the Cryo-TEM instruments"/>
-                    </ToolTip>
-                </ContentControl.ToolTip>
-            </ContentControl>
-
             <ComboBox Grid.Column="2" Grid.Row="1" SelectedItem="{Binding Path=Instrument, Mode=TwoWay}">
                 <sys:String>L120C</sys:String>
                 <sys:String>Arctica</sys:String>
@@ -82,19 +74,15 @@
             <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Path=User, UpdateSourceTrigger=PropertyChanged}" />
 
             <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">Group (Last name or Company)</Label>
-            <ContentControl Content="{StaticResource helpIcon}" Width="16" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4">
-                <ContentControl.ToolTip>
-                    <ToolTip>
-                        <TextBlock Text="Enter 'cryoet-centers' for MCCET groups"/>
-                    </ToolTip>
-                </ContentControl.ToolTip>
-            </ContentControl>
+            <Image Grid.Column="1" Grid.Row="4" Source="/info-circle16.png" Width="16" Height="16" ToolTip="Group is the PI last name. MCCET projects: enter 'cryoet-centers'"></Image>
+
             <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=Group, UpdateSourceTrigger=PropertyChanged}" />
 
             <!-- TODO: add a dropdown selection for Cryo-ET Centers groups if applicable -->
 
             <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">Sample Description</Label>
             <TextBox Grid.Column="2" Grid.Row="5" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}" />
+            <Image Grid.Column="1" Grid.Row="5" Source="/info-circle16.png" Width="16" Height="16" ToolTip="Provide a text description of sample on the grid."></Image>
 
             <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">Biosafety Level</Label>
             <ComboBox Margin="0,0.4" Grid.Column="2" Grid.Row="6" SelectedItem="{Binding Path=BiosafetyLevel, Mode=TwoWay}">
