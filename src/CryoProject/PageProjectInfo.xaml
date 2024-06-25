@@ -33,7 +33,7 @@
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="37*" />
-                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="32"/>
                 <ColumnDefinition Width="50*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -104,6 +104,8 @@
                 <sys:String>Microcrystal Electron Diffraction Session</sys:String>
                 <sys:String>Other Session</sys:String>
             </ComboBox>
+            <Image Grid.Column="1" Grid.Row="9" Source="/info-circle16.png" Width="16" Height="16" ToolTip="Screening: atlas and imaging for grids without a larger collection. Tomography: collecting tilt-series and reconstructions of tomograms. Single-particle: automated imaging for many target particles for reconstuctions. Micro-ED: crystal diffraction."></Image>
+
 
             <!-- TODO: If screening (SerialEM, EPU, Tomo5) -->
             <Label Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2">Data Collection Software</Label>
