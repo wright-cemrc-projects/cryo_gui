@@ -51,10 +51,10 @@
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">Date</Label>
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" ToolTip="Today's date">Date</Label>
             <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=Date, StringFormat='yyyy-MM-dd'}" />
 
-            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">Instrument</Label>
+            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ToolTip="TEM or SEM instrument">Instrument</Label>
 
             <ComboBox Grid.Column="2" Grid.Row="1" SelectedItem="{Binding Path=Instrument, Mode=TwoWay}">
                 <sys:String>L120C</sys:String>
@@ -67,36 +67,40 @@
                 -->
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">Instrument Operator (NetID)</Label>
+            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" ToolTip="Use NetID without @wisc.edu">Instrument Operator (NetID)</Label>
             <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=Operator, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">Globus User (NetID)</Label>
+            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" ToolTip="Use NetID without @wisc.edu">Globus User (NetID)</Label>
             <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding Path=User, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">Group (Last name or Company)</Label>
+            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" ToolTip="Provide lab group as PI last name. MCCET projects provide instead 'cryoet-centers'">Group (Last name or Company)</Label>
+            <!--
             <Image Grid.Column="1" Grid.Row="4" Source="/info-circle16.png" Width="16" Height="16" ToolTip="Group is the PI last name. MCCET projects: enter 'cryoet-centers'"></Image>
-
+            -->
+            
             <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=Group, UpdateSourceTrigger=PropertyChanged}" />
 
             <!-- TODO: add a dropdown selection for Cryo-ET Centers groups if applicable -->
 
-            <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">Sample Description</Label>
+            <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" ToolTip="Provide a text description of sample on the grid.">Sample Description</Label>
             <TextBox Grid.Column="2" Grid.Row="5" Text="{Binding Path=SampleDescription, UpdateSourceTrigger=PropertyChanged}" />
+            <!--
             <Image Grid.Column="1" Grid.Row="5" Source="/info-circle16.png" Width="16" Height="16" ToolTip="Provide a text description of sample on the grid."></Image>
-
-            <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">Biosafety Level</Label>
+            -->
+            
+            <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" ToolTip="Provide either 1 or 2 describing sample's biosafety level">Biosafety Level</Label>
             <ComboBox Margin="0,0.4" Grid.Column="2" Grid.Row="6" SelectedItem="{Binding Path=BiosafetyLevel, Mode=TwoWay}">
                 <sys:Int32>1</sys:Int32>
                 <sys:Int32>2</sys:Int32>
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2">Type of Grid</Label>
+            <Label Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" ToolTip="Enter a detailed description of the grid type, such as QF R1.2/1.3 Cu 300 mesh">Type of Grid</Label>
             <TextBox Grid.Column="2" Grid.Row="7" Text="{Binding Path=TypeOfGrid, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2">[Optional] Reference notebook pages</Label>
+            <Label Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" ToolTip="If relevant, can provide an index to notebook pages here">[Optional] Reference notebook pages</Label>
             <TextBox Grid.Column="2" Grid.Row="8" Text="{Binding Path=ReferenceDescription, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Label Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2">Collection Type</Label>
+            <Label Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2" ToolTip="Screening: atlas and imaging for grids without a larger collection. Tomography: collecting tilt-series and reconstructions of tomograms. Single-particle: automated imaging for many target particles for reconstuctions. Micro-ED: crystal diffraction.">Collection Type</Label>
             <ComboBox Grid.Column="2" Grid.Row="9" SelectedItem="{Binding Path=TypeOfSession, Mode=TwoWay}">
                 <sys:String>Screening Session</sys:String>
                 <sys:String>Tomography Session</sys:String>
@@ -104,11 +108,12 @@
                 <sys:String>Microcrystal Electron Diffraction Session</sys:String>
                 <sys:String>Other Session</sys:String>
             </ComboBox>
+            <!--
             <Image Grid.Column="1" Grid.Row="9" Source="/info-circle16.png" Width="16" Height="16" ToolTip="Screening: atlas and imaging for grids without a larger collection. Tomography: collecting tilt-series and reconstructions of tomograms. Single-particle: automated imaging for many target particles for reconstuctions. Micro-ED: crystal diffraction."></Image>
-
+            -->
 
             <!-- TODO: If screening (SerialEM, EPU, Tomo5) -->
-            <Label Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2">Data Collection Software</Label>
+            <Label Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" ToolTip="Select the software being used in data collection">Data Collection Software</Label>
             <ComboBox Grid.Column="2" Grid.Row="10" SelectedItem="{Binding Path=TypeOfSoftware, Mode=TwoWay}">
                 <sys:String>SerialEM</sys:String>
                 <sys:String>EPU</sys:String>
@@ -117,8 +122,8 @@
             </ComboBox>
 
             <!-- View report button -->
-            <Label Grid.Column="2" Grid.Row="11" Content="{Binding Path=LocationProject}"></Label>
-            <Button Click="ChooseProjectDirectory" Grid.Column="2" Grid.Row="11" Width="247" Height="25" HorizontalAlignment="Right">Choose Project Directory (YYYY-MM-DD)</Button>
+            <Label Grid.Column="2" Grid.Row="11" Content="{Binding Path=LocationProject}" ToolTip="You must choose a project directory to continue"></Label>
+            <Button Click="ChooseProjectDirectory" Grid.Column="2" Grid.Row="11" Width="247" Height="25" HorizontalAlignment="Right" ToolTip="Select the folder created for your data collection on the instrument drive.">Choose Project Directory (YYYY-MM-DD)</Button>
 
         </Grid>
 

@@ -61,5 +61,12 @@ namespace CryoProject
             this.NavigationService.Navigate(p);
         }
 
-     }
+        private void Previous(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
+        }
+    }
 }

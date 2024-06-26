@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Defined ToolTip help as StaticResource strings -->
+    
+    <!--- Imaging pages -->
+    <sys:String x:Key="PageImage_TypeOfCamera">Select the active camera or electron detector.</sys:String>
+    <sys:String x:Key="PageImage_ModeOfCamera">Select the mode: Linear converts accumulated charge to signal, Counting measures individual electron events</sys:String>
+    <sys:String x:Key="PageImage_ModeOfCamera_All">Select the mode: Linear converts accumulated charge to signal, Counting measures individual electron events, and Super-resolution measures electron events with sub-pixel locations</sys:String>
+    <sys:String x:Key="PageImage_PixelSize">Provide the actual, unbinned Pixel Size (Å) for the magnification</sys:String>
+    <sys:String x:Key="PageImage_DosePerTiltImage">Give the dose exposed per each tilt image acquired (e-/Å2)</sys:String>
+    <sys:String x:Key="PageImage_DosePerTiltSeries">Give the dose exposed over entire tilt range for acquisitions (e-/Å2)</sys:String>
+    <sys:String x:Key="PageImage_ExposureTimePerImage">Give the exposure time for a single tilt image (sec)</sys:String>
+
+    <sys:String x:Key="PageImage_UsingCDS">Correlated double sampling (CDS) mode is available on Gatan K3 direct electron detectors; can result in higher DQE</sys:String>
+    
+</ResourceDictionary>

@@ -48,7 +48,7 @@
                 <RowDefinition Height="25" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">Tilt-scheme</Label>
+            <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" ToolTip="Choose one of the tilt schemes, if applicable">Tilt-scheme</Label>
             <ComboBox Grid.Column="3" Grid.Row="1" SelectedItem="{Binding Path=TiltScheme, Mode=TwoWay}" Grid.ColumnSpan="2">
                 <sys:String>NA</sys:String>
                 <sys:String>Unidirectional</sys:String>
@@ -56,28 +56,28 @@
                 <sys:String>Dose-symmetric</sys:String>
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">Tilt-angle increment</Label>
+            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" ToolTip="Enter decimal value for the tilt-angle increment (example 3.0)">Tilt-angle increment</Label>
             <TextBox Grid.Column="3" Grid.Row="2" Text="{Binding Path=TiltAngle, UpdateSourceTrigger=LostFocus,StringFormat=N1}" Grid.ColumnSpan="2"/>
 
-            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3">Automated processing workflow</Label>
+            <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" ToolTip="Choose to use an automated processing pipeline">Automated processing workflow</Label>
             <ComboBox Grid.Column="3" Grid.Row="3" SelectedItem="{Binding Path=WorkflowOptions, Mode=TwoWay}" Grid.ColumnSpan="2">
                 <sys:String>MotionCor2</sys:String>
                 <sys:String>None</sys:String>
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3">AreTomo: Set VolZ (volume height in voxels):</Label>
+            <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" ToolTip="Change the VolZ to match overall height for the ice, as estimated.">AreTomo: Set VolZ (volume height in voxels):</Label>
             <TextBox Grid.Column="3" Grid.Row="4" Text="{Binding Path=AreTomo_VolZ,  UpdateSourceTrigger=LostFocus,StringFormat=N0}" Grid.ColumnSpan="2"/>
 
-            <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3">AreTomo: Set AlignZ (alignment range in voxels):</Label>
+            <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" ToolTip="Change the AlignZ to affect the alignment of a tomogram; match the height containing details in the target of interest.">AreTomo: Set AlignZ (alignment range in voxels):</Label>
             <TextBox Grid.Column="3" Grid.Row="5" Text="{Binding Path=AreTomo_AlignZ,  UpdateSourceTrigger=LostFocus,StringFormat=N0}" Grid.ColumnSpan="2"/>
 
-            <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3">AreTomo: Enable TiltCor?</Label>
+            <Label Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" ToolTip="Enable Tilt Correction during tomogram generation.">AreTomo: Enable TiltCor?</Label>
             <ComboBox Grid.Column="3" Grid.Row="6" SelectedItem="{Binding Path=AreTomo_TiltCor, Mode=TwoWay}" Grid.ColumnSpan="2">
                 <sys:String>Disabled</sys:String>
                 <sys:String>Enabled</sys:String>
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="3">AreTomo: Enable Patch Tracking?</Label>
+            <Label Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="3" ToolTip="Enable patch-based track during the alignment of tilts.">AreTomo: Enable Patch Tracking?</Label>
             <ComboBox Grid.Column="3" Grid.Row="7" SelectedItem="{Binding Path=AreTomo_Patch, Mode=TwoWay}" Grid.ColumnSpan="2">
                 <sys:String>Disabled</sys:String>
                 <sys:String>Enabled</sys:String>
