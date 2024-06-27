@@ -60,6 +60,14 @@ namespace CryoProject
             data.WriteToDisk(readmePath);
         }
 
+        private void Previous(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
+        }
+
         private void Done(object sender, RoutedEventArgs e)
         {
             SaveProjectTextfile();

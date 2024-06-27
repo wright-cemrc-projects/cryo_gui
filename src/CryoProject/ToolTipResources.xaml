@@ -9,10 +9,51 @@
     <sys:String x:Key="PageImage_ModeOfCamera">Select the mode: Linear converts accumulated charge to signal, Counting measures individual electron events</sys:String>
     <sys:String x:Key="PageImage_ModeOfCamera_All">Select the mode: Linear converts accumulated charge to signal, Counting measures individual electron events, and Super-resolution measures electron events with sub-pixel locations</sys:String>
     <sys:String x:Key="PageImage_PixelSize">Provide the actual, unbinned Pixel Size (Å) for the magnification</sys:String>
+    <sys:String x:Key="PageImage_DosePerImage">Give the dose exposed per each image acquired (e-/Å2)</sys:String>
+    <sys:String x:Key="PageImage_DoseRate">Give the dose rate (e-/pixel/sec)</sys:String>
     <sys:String x:Key="PageImage_DosePerTiltImage">Give the dose exposed per each tilt image acquired (e-/Å2)</sys:String>
     <sys:String x:Key="PageImage_DosePerTiltSeries">Give the dose exposed over entire tilt range for acquisitions (e-/Å2)</sys:String>
     <sys:String x:Key="PageImage_ExposureTimePerImage">Give the exposure time for a single tilt image (sec)</sys:String>
+    <sys:String x:Key="PageImage_NumberFractions">Give the fraction count used for micrographs</sys:String>
+    <sys:String x:Key="PageImage_DosePerFraction">Give the dose per fraction in micrograph</sys:String>
 
     <sys:String x:Key="PageImage_UsingCDS">Correlated double sampling (CDS) mode is available on Gatan K3 direct electron detectors; can result in higher DQE</sys:String>
+    <sys:String x:Key="PageImage_UsingEER">Electron event representation (EER) is a lossless image format available on the Falcon4i detector.</sys:String>
+
+    <!-- Optics pages-->
+    <sys:String x:Key="PageOptics_Filter">Choose between EFTEM (energy filter in optics path) or TEM: no energy filter</sys:String>
+    <sys:String x:Key="PageOptics_Probe">Choose the imaging probe selected in the TEM UI</sys:String>
+    <sys:String x:Key="PageOptics_SpotSize">Choose spot size selected in the TEM UI</sys:String>
+    <sys:String x:Key="PageOptics_C2Aperture">Enter the dimension of the C2 aperture</sys:String>
+    <sys:String x:Key="PageOptics_C2LensPower">Enter value of C2 lens power (%).</sys:String>
+    <sys:String x:Key="PageOptics_IlluminatedArea">Enter the illuminated area (µm) as determined in TEM UI</sys:String>
+    <sys:String x:Key="PageOptics_ObjectiveAperture">Enter the dimensions of the objective aperture (µm), if used</sys:String>
+    <sys:String x:Key="PageOptics_EnergyFilterSlitWidth">Enter the dimension (eV) used for the energy filter slit</sys:String>
+    <sys:String x:Key="PageOptics_AccelerationVoltage">Follow the default value for the instrument (kV)</sys:String>
+    <sys:String x:Key="PageOptics_PhasePlate">Does this data collection use the phase plate?</sys:String>
+    <sys:String x:Key="PageOptics_Holder">Select the holder inserted</sys:String>
+    
+    <!-- Tomography pages -->
+    <sys:String x:Key="PageTomography_TiltScheme">Choose one of the tilt schemes, if applicable</sys:String>
+    <sys:String x:Key="PageTomography_TiltAngleIncrement">Enter decimal value for the tilt-angle increment (ex 3.0)</sys:String>
+    <sys:String x:Key="PageTomography_AutomatedWorkflow">Choose to use an automated processing pipeline</sys:String>
+    <sys:String x:Key="PageTomography_AreTomo_VolZ">Change VolZ to a height value (integer) for the ice; see directions below</sys:String>
+    <sys:String x:Key="PageTomography_AreTomo_AlignZ">Change the AlignZ to match region of alignment features; see directions below</sys:String>
+    <sys:String x:Key="PageTomography_AreTomo_TiltCor">Enable Tilt Correction during tomogram generation</sys:String>
+    <sys:String x:Key="PageTomography_AreTomo_PatchTracking">Enable patch-based track during the alignment of tilts</sys:String>
+    
+    <!-- Project pages -->
+    <sys:String x:Key="PageProject_Date">Today's date</sys:String>
+    <sys:String x:Key="PageProject_Instrument">TEM or SEM instrument</sys:String>
+    <sys:String x:Key="PageProject_Operator">Provide the instrument operator giving a NetID without @wisc.edu</sys:String>
+    <sys:String x:Key="PageProject_User">Use NetID without @wisc.edu</sys:String>
+    <sys:String x:Key="PageProject_Group">Provide lab group as PI last name. MCCET projects provide instead 'cryoet-centers'</sys:String>
+    <sys:String x:Key="PageProject_Sample">Provide a text description of sample on the grid</sys:String>
+    <sys:String x:Key="PageProject_Biosafety">Select Biosafety Level 1 or 2 for sample</sys:String>
+    <sys:String x:Key="PageProject_TypeOfGrid">Enter a detailed description of the grid type, such as QF R1.2/1.3 Cu 300 mesh</sys:String>
+    <sys:String x:Key="PageProject_NotebookPages">Provide a reference to relevant lab notebook page here, if applicable</sys:String>
+    <sys:String x:Key="PageProject_TypeOfCollection">Screening: atlas/imaging of grids; not data collection. Tomography: collection of tilt-series and reconstructions of tomograms. Single-particle: automated imaging of particles for 3D reconstuctions. MicroED: micro-crystal electron diffraction.</sys:String>
+    <sys:String x:Key="PageProject_Software">Select the software being used in data collection</sys:String>
+    <sys:String x:Key="PageProject_Location">Select the project location to continue</sys:String>
     
 </ResourceDictionary>

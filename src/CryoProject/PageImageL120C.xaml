@@ -38,23 +38,24 @@
                 <RowDefinition Height="25" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0">Detector type</Label>
+            <Label Grid.Column="0" Grid.Row="0" ToolTip="{StaticResource PageImage_TypeOfCamera}" Content="Detector type"/>
             <ComboBox Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=TypeOfCamera, Mode=TwoWay}" HorizontalAlignment="Left" Width="300">
                 <sys:String>Ceta-M</sys:String>
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="1" Content="Pixel Size (Å) (unbinned)"/>
+            <Label Grid.Column="0" Grid.Row="1" ToolTip="{StaticResource PageImage_PixelSize}" Content="Pixel Size (Å) (unbinned)"/>
             <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=PixelSize,  UpdateSourceTrigger=LostFocus,StringFormat=N3}"/>
 
-            <Label Grid.Column="0" Grid.Row="2">Total dose per image (e-/Å2)</Label>
+            <Label Grid.Column="0" Grid.Row="2" ToolTip="{StaticResource PageImage_DosePerImage}" Content="Total dose per image (e-/Å2)" />
             <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=DosePerImage,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="3">Exposure time per image (sec)</Label>
+            <Label Grid.Column="0" Grid.Row="3" ToolTip="{StaticResource PageImage_ExposureTimePerImage}" Content="Exposure time per image (sec)" />
             <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
         </Grid>
 
         <!-- View report button -->
+        <Button Click="Previous" Grid.Column="1" Grid.Row="3" Margin="0,20,50,0" Width="125" Height="25" HorizontalAlignment="Left">Previous Page</Button>
         <Button Click="Next" Grid.Column="1" Grid.Row="3" Margin="0,20,50,0" Width="125" Height="25" HorizontalAlignment="Right">Next Page</Button>
 
         <Grid.Background>
