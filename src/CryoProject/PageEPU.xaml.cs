@@ -90,6 +90,14 @@ namespace CryoProject
             }
         }
 
+        private void Previous(object sender, RoutedEventArgs e)
+        {
+            if (this.NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
+        }
+
         private void Next(object sender, RoutedEventArgs e)
         {
             PageDone p = new PageDone((Metadata)DataContext);
