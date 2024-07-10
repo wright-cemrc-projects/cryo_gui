@@ -32,6 +32,9 @@ namespace CryoProject
         {
             InitializeComponent();
             DataContext = data;
+
+            // Subscribe to change events
+            InstrumentCB.SelectionChanged += InstrumentCB_SelectionChanged;
         }
 
         private void ChooseProjectDirectory(object sender, RoutedEventArgs e)
@@ -81,12 +84,6 @@ namespace CryoProject
                     case "Krios G4":
                         p = new PageOptics((Metadata)DataContext);
                         break;
-                    case "CEMRC Aquilos":
-                        p = new PageDone((Metadata)DataContext);
-                        break;
-                    case "MCCET Aquilos":
-                        p = new PageDone((Metadata)DataContext);
-                        break;
                     default:
                         p = new PageOptics((Metadata)DataContext);
                         break;
@@ -96,5 +93,42 @@ namespace CryoProject
             }
         }
 
+        private void InstrumentCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItem = InstrumentCB.SelectedItem as String;
+            // System.Windows.MessageBox.Show($"Selected Item: {selectedItem}");
+
+            SessionCB.Items.Clear();
+            SoftwareCB.Items.Clear();
+
+
+            switch (selectedItem)
+            {
+                case "L120C":
+                    List<string> sessionItems_L120C = new List<string> { "Screening Session", "Tomography Session", "Single Particle Session", "Other" };
+                    foreach (var item in sessionItems_L120C) {  SessionCB.Items.Add(item); }
+
+                    List<string> softwareItems_L120C = new List<string> { "SerialEM" };
+                    foreach (var item in softwareItems_L120C) {  SoftwareCB.Items.Add(item); }
+
+                    break;
+                case "Arctica":
+                    List<string> sessionItems_Arctica = new List<string> { "Screening Session", "Tomography Session", "Single Particle Session", "Other" };
+                    foreach (var item in sessionItems_Arctica) { SessionCB.Items.Add(item); }
+
+                    List<string> softwareItems_Arctica = new List<string> { "SerialEM", "EPU", "Tomo5" };
+                    foreach (var item in softwareItems_Arctica) { SoftwareCB.Items.Add(item); }
+
+                    break;
+                default:
+                    List<string> sessionItems_Default = new List<string> { "Screening Session", "Tomography Session", "Single Particle Session", "Microcrystal Electron Diffraction Session", "Other" };
+                    foreach (var item in sessionItems_Default) { SessionCB.Items.Add(item); }
+
+                    List<string> softwareItems_Default = new List<string> { "SerialEM", "EPU", "EPUD", "Tomo5" };
+                    foreach (var item in softwareItems_Default) { SoftwareCB.Items.Add(item); }
+
+                    break;
+            }
+        }
     }
 }

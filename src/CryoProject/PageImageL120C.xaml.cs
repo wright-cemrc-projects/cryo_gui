@@ -34,15 +34,45 @@ namespace CryoProject
             Metadata data = (Metadata)DataContext;
             Page p;
 
-            // L120C doesn't have EPU, next page is either additional SerialEM Tomography details, or ending.
-            if (data.TypeOfSession == "Tomography Session")
+            switch (data.TypeOfSession)
             {
-                p = new PageTomography((Metadata)DataContext);
+
+                case "Single Particle Session":
+                    if (data.TypeOfSoftware == "EPU")
+                    {
+                        p = new PageEPU((Metadata)DataContext);
+                    }
+                    if (data.TypeOfSoftware == "SerialEM")
+                    {
+                        p = new PageSerialEM((Metadata)DataContext);
+                    }
+                    else
+                    {
+                        p = new PageDone((Metadata)DataContext);
+                    }
+                    break;
+                case "Screening Session":
+                    if (data.TypeOfSoftware == "EPU")
+                    {
+                        p = new PageEPU((Metadata)DataContext);
+                    }
+                    if (data.TypeOfSoftware == "SerialEM")
+                    {
+                        p = new PageSerialEM((Metadata)DataContext);
+                    }
+                    else
+                    {
+                        p = new PageDone((Metadata)DataContext);
+                    }
+                    break;
+                case "Tomography Session":
+                    p = new PageTomography((Metadata)DataContext);
+                    break;
+                default:
+                    p = new PageDone((Metadata)DataContext);
+                    break;
             }
-            else
-            {
-                p = new PageDone((Metadata)DataContext);
-            }
+
             this.NavigationService.Navigate(p);
         }
 

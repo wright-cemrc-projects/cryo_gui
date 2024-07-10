@@ -567,7 +567,7 @@ namespace CryoProject
         }
         */
 
-        private string m_workflowOptions = "MotionCor2";
+        private string m_workflowOptions = "None";
         public string WorkflowOptions
         {
             get { return m_workflowOptions; }
@@ -803,6 +803,7 @@ namespace CryoProject
             ExposureTimePerImage = 0;
             TypeOfSoftware = "SerialEM";
             // TODO: Do not show tilt scheme options when selecting SPA or screening.
+            WorkflowOptions = "None";
             Console.WriteLine("Defaults for L120C");
         }
 
@@ -834,6 +835,7 @@ namespace CryoProject
             DoseRate = 0;
             NumberOfFrames = 0;
             DosePerFrame = 1;
+            WorkflowOptions = "None";
         }
 
         private void SetupKriosG3i()
@@ -863,6 +865,7 @@ namespace CryoProject
             DosePerImage = 0;
             NumberOfFrames = 0;
             DosePerFrame = 1;
+            WorkflowOptions = "None";
         }
 
         private void SetupKriosG4()
@@ -890,6 +893,7 @@ namespace CryoProject
             UsingEER = "Yes";
             PixelSize = 0;
             DosePerImage = 0;
+            WorkflowOptions = "None";
         }
 
         // Consider removing CryoSPARC from the Automated processing options.

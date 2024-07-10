@@ -41,13 +41,28 @@ namespace CryoProject
                     {
                         p = new PageEPU((Metadata)DataContext);
                     }
+                    if (data.TypeOfSoftware =="SerialEM")
+                    {
+                        p = new PageSerialEM((Metadata)DataContext);
+                    }
                     else
                     {
                         p = new PageDone((Metadata)DataContext);
                     }
                     break;
-                case "Microcrystal Electron Diffraction Session":
-                    p = new PageDone((Metadata)DataContext);
+                case "Screening Session":
+                    if (data.TypeOfSoftware == "EPU")
+                    {
+                        p = new PageEPU((Metadata)DataContext);
+                    }
+                    if (data.TypeOfSoftware == "SerialEM")
+                    {
+                        p = new PageSerialEM((Metadata)DataContext);
+                    }
+                    else
+                    {
+                        p = new PageDone((Metadata)DataContext);
+                    }
                     break;
                 case "Tomography Session":
                     p = new PageTomography((Metadata)DataContext);

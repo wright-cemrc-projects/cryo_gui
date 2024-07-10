@@ -75,6 +75,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BoolToIndexConverter.cs" />
+    <Compile Include="PageSerialEM.xaml.cs">
+      <DependentUpon>PageSerialEM.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageImageArctica.xaml.cs">
       <DependentUpon>PageImageArctica.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
     <Page Include="PageDone.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageSerialEM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="PageImageArctica.xaml">
       <Generator>MSBuild:Compile</Generator>
