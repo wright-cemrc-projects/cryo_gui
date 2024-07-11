@@ -27,6 +27,28 @@ namespace CryoProject
         {
             InitializeComponent();
             DataContext = data;
+            // Filter based on data.ImagingMode == TEM or EFTEM
+            ApplyFilter(data.ImagingMode);
+        }
+
+        private void ApplyFilter(String mode)
+        {
+            switch (mode)
+            {
+                case "EFTEM":
+                    TypeOfCameraCB.Items.Clear();
+                    List<string> camera_EFTEM_List = new List<string> { "EF-Falcon 4i" };
+                    foreach (var item in camera_EFTEM_List) { TypeOfCameraCB.Items.Add(item); }
+                    TypeOfCameraCB.SelectedIndex = 0;
+                    break;
+                case "TEM":
+                    TypeOfCameraCB.Items.Clear();
+                    List<string> camera_TEM_List = new List<string> { "BM-Falcon 4i", "Ceta-D" };
+                    foreach (var item in camera_TEM_List) { TypeOfCameraCB.Items.Add(item); }
+                    TypeOfCameraCB.SelectedIndex = 0;
+                    break;
+
+            }
         }
 
         private void Next(object sender, RoutedEventArgs e)

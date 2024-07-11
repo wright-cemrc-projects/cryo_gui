@@ -48,9 +48,9 @@
             <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" TextWrapping="Wrap"  Margin="10,0,10,-140">
                 <Bold>Instructions</Bold>:<LineBreak/>
                         
+                    Please save micrographs as TIFF or EER formats under a folder named 'frames' to be included in preprocessing. <LineBreak/><LineBreak/>
                 
-                    These workflow options are for individual micrographs or single-particle collections. <LineBreak/><LineBreak/>
-                    Please save micrographs as TIFF or EER formats under a folder named 'frames' to be included in preprocessing.
+                    These workflow options are for individual micrographs or single-particle collections.
                     
             </TextBlock>
         </Grid>

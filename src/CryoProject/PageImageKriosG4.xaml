@@ -45,7 +45,7 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0" ToolTip="{StaticResource PageImage_TypeOfCamera}" Content="Detector type" />
-            <ComboBox Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=TypeOfCamera, Mode=TwoWay}" HorizontalAlignment="Left" Width="300">
+            <ComboBox x:Name="TypeOfCameraCB" Grid.Column="1" Grid.Row="0" SelectedItem="{Binding Path=TypeOfCamera, Mode=TwoWay}" HorizontalAlignment="Left" Width="300">
                 <sys:String>EF-Falcon 4i</sys:String>
                 <sys:String>BM-Falcon 4i</sys:String>
                 <sys:String>Ceta-D</sys:String>
