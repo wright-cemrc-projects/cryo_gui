@@ -42,7 +42,7 @@ namespace CryoProject
                     {
                         p = new PageEPU((Metadata)DataContext);
                     }
-                    if (data.TypeOfSoftware == "SerialEM")
+                    else if (data.TypeOfSoftware == "SerialEM")
                     {
                         p = new PageSerialEM((Metadata)DataContext);
                     }
@@ -56,7 +56,7 @@ namespace CryoProject
                     {
                         p = new PageEPU((Metadata)DataContext);
                     }
-                    if (data.TypeOfSoftware == "SerialEM")
+                    else if (data.TypeOfSoftware == "SerialEM")
                     {
                         p = new PageSerialEM((Metadata)DataContext);
                     }

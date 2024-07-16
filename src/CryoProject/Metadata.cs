@@ -672,6 +672,7 @@ namespace CryoProject
             builder.AppendLine("Type of grid = " + TypeOfGrid);
             builder.AppendLine("Reference = " + ReferenceDescription);
             builder.AppendLine("Purpose = " + PurposeDescription);
+            builder.AppendLine("Session = " + TypeOfSession);
             builder.AppendLine("Software = " + TypeOfSoftware);
             builder.AppendLine("Location of project = " + LocationProject);
             builder.AppendLine();
