@@ -36,7 +36,7 @@ namespace CryoProject
 
             switch (data.TypeOfSession)
             {
-
+                /* L120C doesn't offer EPU, and SPA and Tomography automated options do not make sense.
                 case "Single Particle Session":
                     if (data.TypeOfSoftware == "EPU")
                     {
@@ -68,6 +68,7 @@ namespace CryoProject
                 case "Tomography Session":
                     p = new PageTomography((Metadata)DataContext);
                     break;
+                */
                 default:
                     p = new PageDone((Metadata)DataContext);
                     break;
