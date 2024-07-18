@@ -18,7 +18,7 @@ namespace CryoProject
         // 1.30 updating tomography page for VolZ and documentations.
         // 1.40 updates requested from Operations Manager
 
-        private String m_version = "1.4";
+        private String m_version = "1.5";
         public String Version
         {
             get { return m_version; }
