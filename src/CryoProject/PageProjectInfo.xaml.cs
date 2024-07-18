@@ -67,6 +67,11 @@ namespace CryoProject
             if (!data.ProjectSet)
             {
                 System.Windows.Forms.MessageBox.Show("Please set the project path.", "Page incomplete.");
+            } else if (data.TypeOfSoftware == "") {
+                System.Windows.Forms.MessageBox.Show("Please set the software used.", "Page incomplete.");
+            } else if (data.TypeOfSession == "")
+            {
+                System.Windows.Forms.MessageBox.Show("Please set the session type.", "Page incomplete.");
             }
             else {
                 Page p;
@@ -101,6 +106,7 @@ namespace CryoProject
             SessionCB.Items.Clear();
             SoftwareCB.Items.Clear();
 
+            Metadata data = (Metadata)DataContext;
 
             switch (selectedItem)
             {
@@ -111,6 +117,8 @@ namespace CryoProject
                     List<string> softwareItems_L120C = new List<string> { "SerialEM" };
                     foreach (var item in softwareItems_L120C) {  SoftwareCB.Items.Add(item); }
 
+                    data.SetupL120C();
+
                     break;
                 case "Arctica":
                     List<string> sessionItems_Arctica = new List<string> { "Screening Session", "Tomography Session", "Single Particle Session", "Other" };
@@ -119,7 +127,32 @@ namespace CryoProject
                     List<string> softwareItems_Arctica = new List<string> { "SerialEM", "EPU", "Tomo5" };
                     foreach (var item in softwareItems_Arctica) { SoftwareCB.Items.Add(item); }
 
+                    data.SetupArctica();
+
                     break;
+
+                case "Krios G3i":
+                    List<string> sessionItems_G3i = new List<string> { "Screening Session", "Tomography Session", "Single Particle Session", "Microcrystal Electron Diffraction Session", "Other" };
+                    foreach (var item in sessionItems_G3i) { SessionCB.Items.Add(item); }
+
+                    List<string> softwareItems_G3i = new List<string> { "SerialEM", "EPU", "EPUD", "Tomo5" };
+                    foreach (var item in softwareItems_G3i) { SoftwareCB.Items.Add(item); }
+
+                    data.SetupKriosG3i();
+
+                    break;
+
+                case "Krios G4":
+                    List<string> sessionItems_G4 = new List<string> { "Screening Session", "Tomography Session", "Single Particle Session", "Microcrystal Electron Diffraction Session", "Other" };
+                    foreach (var item in sessionItems_G4) { SessionCB.Items.Add(item); }
+
+                    List<string> softwareItems_G4 = new List<string> { "SerialEM", "EPU", "EPUD", "Tomo5" };
+                    foreach (var item in softwareItems_G4) { SoftwareCB.Items.Add(item); }
+
+                    data.SetupKriosG4();
+
+                    break;
+
                 default:
                     List<string> sessionItems_Default = new List<string> { "Screening Session", "Tomography Session", "Single Particle Session", "Microcrystal Electron Diffraction Session", "Other" };
                     foreach (var item in sessionItems_Default) { SessionCB.Items.Add(item); }

@@ -23,6 +23,9 @@ namespace CryoProject
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {
+        // Make this field locked to avoid choosing other incorrect options.
+        private bool editableInstrument = true;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -64,6 +67,11 @@ namespace CryoProject
                 state.SetDefaults(arguments["instrument"]);
             }
 
+            if (arguments.ContainsKey("lock"))
+            {
+                editableInstrument = false;
+            }
+
             string filename = "defaults.json";
 
             // Try loading "default.json" which could provide per instrument settings.
@@ -81,7 +89,9 @@ namespace CryoProject
             // MainFrame.Navigated += (s, n_args) => ClearNavigationHistory();
 
             // Create the application state and set for the first time.
-            MainFrame.Navigate(new PageProjectInfo(state));
+            PageProjectInfo p = new PageProjectInfo(state);
+            p.InstrumentCB.IsEnabled = editableInstrument;
+            MainFrame.Navigate(p);
 
         }
 
@@ -107,7 +117,8 @@ namespace CryoProject
 
                 // Clear navigation history after navigation
                 // MainFrame.Navigated += (s, n_args) => ClearNavigationHistory();
-
+                PageProjectInfo p = new PageProjectInfo(meta);
+                p.InstrumentCB.IsEnabled = editableInstrument;
                 MainFrame.Navigate(new PageProjectInfo(meta));
             }
         }

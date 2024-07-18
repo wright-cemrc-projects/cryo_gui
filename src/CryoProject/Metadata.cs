@@ -781,7 +781,7 @@ namespace CryoProject
             }
         }
 
-        private void SetupL120C()
+        public void SetupL120C()
         {
             Instrument = "L120C";
             TypeOfGrid = "Carbon Foil Cu 200 mesh";
@@ -808,7 +808,7 @@ namespace CryoProject
             Console.WriteLine("Defaults for L120C");
         }
 
-        private void SetupArctica()
+        public void SetupArctica()
         {
             Instrument = "Arctica";
             TypeOfGrid = "QF R1.2/1.3 Cu 300 mesh";
@@ -839,7 +839,7 @@ namespace CryoProject
             WorkflowOptions = "None";
         }
 
-        private void SetupKriosG3i()
+        public void SetupKriosG3i()
         {
             Instrument = "Krios G3i";
             TypeOfGrid = "QF R1.2/1.3 Cu 300 mesh";
@@ -869,7 +869,7 @@ namespace CryoProject
             WorkflowOptions = "None";
         }
 
-        private void SetupKriosG4()
+        public void SetupKriosG4()
         {
             Instrument = "Krios G4";
             TypeOfGrid = "QF R2/1 Au 200 mesh";
