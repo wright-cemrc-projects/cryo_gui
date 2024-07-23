@@ -4,8 +4,16 @@
     
     <!-- Defined ToolTip help as StaticResource strings -->
     
+    <!--- EPU -->
+    <sys:String x:Key="PageEPU_Presets">Select the EPU presets file</sys:String>
+    <sys:String x:Key="PageEPU_Preferences">Select the EPU preferences file</sys:String>
+    <sys:String x:Key="PageEPU_Preprocessing">Choose to use an automated processing pipeline (RELION generates a starting project, MotionCor/gCTF for motion-correction and CTF estimation)</sys:String>
+    
+    <!--- SerialEM -->
+    <sys:String x:Key="PageSerialEM_Preprocessing">Choose to use an automated processing pipeline (RELION generates a starting project, MotionCor/gCTF for motion-correction and CTF estimation)</sys:String>
+
     <!--- Imaging pages -->
-    <sys:String x:Key="PageImage_TypeOfCamera">Select the active camera or electron detector.</sys:String>
+    <sys:String x:Key="PageImage_TypeOfCamera">Select the active camera or electron detector</sys:String>
     <sys:String x:Key="PageImage_ModeOfCamera">Select the mode: Linear converts accumulated charge to signal, Counting measures individual electron events</sys:String>
     <sys:String x:Key="PageImage_ModeOfCamera_All">Select the mode: Linear converts accumulated charge to signal, Counting measures individual electron events, and Super-resolution measures electron events with sub-pixel locations</sys:String>
     <sys:String x:Key="PageImage_PixelSize">Provide the actual, unbinned Pixel Size (Å) for the magnification</sys:String>
@@ -18,7 +26,7 @@
     <sys:String x:Key="PageImage_DosePerFraction">Give the dose per fraction in micrograph</sys:String>
 
     <sys:String x:Key="PageImage_UsingCDS">Correlated double sampling (CDS) mode is available on Gatan K3 direct electron detectors; can result in higher DQE</sys:String>
-    <sys:String x:Key="PageImage_UsingEER">Electron event representation (EER) is a lossless image format available on the Falcon4i detector.</sys:String>
+    <sys:String x:Key="PageImage_UsingEER">Electron event representation (EER) is a lossless image format available on the Falcon4i detector</sys:String>
 
     <!-- Optics pages-->
     <sys:String x:Key="PageOptics_Filter">Choose between EFTEM (energy filter in optics path) or TEM: no energy filter</sys:String>
@@ -30,7 +38,7 @@
     <sys:String x:Key="PageOptics_ObjectiveAperture">Enter the dimensions of the objective aperture (µm), if used</sys:String>
     <sys:String x:Key="PageOptics_EnergyFilterSlitWidth">Enter the dimension (eV) used for the energy filter slit</sys:String>
     <sys:String x:Key="PageOptics_AccelerationVoltage">Follow the default value for the instrument (kV)</sys:String>
-    <sys:String x:Key="PageOptics_PhasePlate">Does this data collection use the phase plate?</sys:String>
+    <sys:String x:Key="PageOptics_PhasePlate">Yes, if phase plate is inserted</sys:String>
     <sys:String x:Key="PageOptics_Holder">Select the holder inserted</sys:String>
     
     <!-- Tomography pages -->
@@ -52,7 +60,7 @@
     <sys:String x:Key="PageProject_Biosafety">Select Biosafety Level 1 or 2 for sample</sys:String>
     <sys:String x:Key="PageProject_TypeOfGrid">Enter a detailed description of the grid type, such as QF R1.2/1.3 Cu 300 mesh</sys:String>
     <sys:String x:Key="PageProject_NotebookPages">Provide a reference to relevant lab notebook page here, if applicable</sys:String>
-    <sys:String x:Key="PageProject_TypeOfCollection">Screening: atlas/imaging of grids; not data collection. Tomography: collection of tilt-series and reconstructions of tomograms. Single-particle: automated imaging of particles for 3D reconstuctions. MicroED: micro-crystal electron diffraction.</sys:String>
+    <sys:String x:Key="PageProject_TypeOfCollection">Screening: atlas/imaging of grids; not data collection, Tomography: collection of tilt-series and reconstructions of tomograms, Single-particle: automated imaging of particles for 3D reconstuctions, MicroED: micro-crystal electron diffraction</sys:String>
     <sys:String x:Key="PageProject_Software">Select the software being used in data collection</sys:String>
     <sys:String x:Key="PageProject_Location">Select the project location to continue</sys:String>
     

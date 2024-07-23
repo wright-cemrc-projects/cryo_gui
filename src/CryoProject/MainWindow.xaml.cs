@@ -119,7 +119,7 @@ namespace CryoProject
                 // MainFrame.Navigated += (s, n_args) => ClearNavigationHistory();
                 PageProjectInfo p = new PageProjectInfo(meta);
                 p.InstrumentCB.IsEnabled = editableInstrument;
-                MainFrame.Navigate(new PageProjectInfo(meta));
+                MainFrame.Navigate(p);
             }
         }
 

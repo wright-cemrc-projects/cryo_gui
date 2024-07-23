@@ -64,22 +64,22 @@
                 <sys:String>Yes</sys:String>
             </ComboBox>
 
-            <Label Grid.Column="0" Grid.Row="3" Content="Pixel Size (Å) (unbinned)"/>
+            <Label Grid.Column="0" Grid.Row="3" ToolTip="{StaticResource PageImage_PixelSize}" Content="Pixel Size (Å) (unbinned)"/>
             <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Path=PixelSize,  UpdateSourceTrigger=LostFocus,StringFormat=N3}"/>
 
-            <Label Grid.Column="0" Grid.Row="4">Total dose per image (e-/Å2)</Label>
+            <Label Grid.Column="0" Grid.Row="4" ToolTip="{StaticResource PageImage_DosePerImage}">Total dose per image (e-/Å2)</Label>
             <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Path=DosePerImage,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="5">Exposure time per image (sec)</Label>
+            <Label Grid.Column="0" Grid.Row="5" ToolTip="{StaticResource PageImage_ExposureTimePerImage}">Exposure time per image (sec)</Label>
             <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding Path=ExposureTimePerImage, UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="6">Dose rate (e-/pixel/sec) </Label>
+            <Label Grid.Column="0" Grid.Row="6" ToolTip="{StaticResource PageImage_DoseRate}">Dose rate (e-/pixel/sec) </Label>
             <TextBox Grid.Column="1" Grid.Row="6" Text="{Binding Path=DoseRate,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
-            <Label Grid.Column="0" Grid.Row="7">Number of fractions</Label>
+            <Label Grid.Column="0" Grid.Row="7" ToolTip="{StaticResource PageImage_NumberFractions}">Number of fractions</Label>
             <TextBox Grid.Column="1" Grid.Row="7" Text="{Binding Path=NumberOfFrames,  UpdateSourceTrigger=LostFocus,StringFormat=N0}"/>
 
-            <Label Grid.Column="0" Grid.Row="8">Dose per fraction (e-/Å2)</Label>
+            <Label Grid.Column="0" Grid.Row="8" ToolTip="{StaticResource PageImage_DosePerFraction}">Dose per fraction (e-/Å2)</Label>
             <TextBox Grid.Column="1" Grid.Row="8" Text="{Binding Path=DosePerFrame,  UpdateSourceTrigger=LostFocus,StringFormat=N2}"/>
 
         </Grid>

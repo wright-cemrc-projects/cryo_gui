@@ -34,7 +34,9 @@ namespace CryoProject
             DataContext = data;
 
             // Subscribe to change events
-            InstrumentCB.SelectionChanged += InstrumentCB_SelectionChanged;
+            // BUG: this listener is triggered when values are loaded from a file, setting the InstrumentCB from bound metadata variable.
+            //  - that results in defaults being applied.
+            // InstrumentCB.SelectionChanged += InstrumentCB_SelectionChanged;
         }
 
         private void ChooseProjectDirectory(object sender, RoutedEventArgs e)

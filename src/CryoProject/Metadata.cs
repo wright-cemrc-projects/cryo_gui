@@ -12,13 +12,15 @@ namespace CryoProject
     [Serializable]
     public class Metadata : INotifyPropertyChanged
     {
-        // 1.06 adding fields for ModeOfCamera
-        // 1.06 adding fields for OperatorID
-        // 1.10 adding separate page for L120C options
-        // 1.30 updating tomography page for VolZ and documentations.
-        // 1.40 updates requested from Operations Manager
+        // 1.06.0 adding fields for ModeOfCamera
+        // 1.06.0 adding fields for OperatorID
+        // 1.1.0 adding separate page for L120C options
+        // 1.3.0 updating tomography page for VolZ and documentations.
+        // 1.4.0 updates requested from Operations Manager
+        // 1.5.0 updates with file loading, tooltip help
+        // 1.5.1 bugfixes
 
-        private String m_version = "1.5";
+        private String m_version = "1.5.1";
         public String Version
         {
             get { return m_version; }
